@@ -1,0 +1,12 @@
+{"file":"BtnsSpriteatlas.png","frames":{
+"Tab_PVE":{"x":1,"y":630,"w":176,"h":71,"offX":0,"offY":0,"sourceW":176,"sourceH":71},
+"Btn_WuJin":{"x":1,"y":337,"w":553,"h":166,"offX":0,"offY":0,"sourceW":553,"sourceH":166},
+"Btn_Sure":{"x":745,"y":517,"w":263,"h":88,"offX":0,"offY":0,"sourceW":263,"sourceH":88},
+"Btn_Submit":{"x":745,"y":607,"w":263,"h":88,"offX":0,"offY":0,"sourceW":263,"sourceH":88},
+"Btn_StartGame":{"x":1,"y":505,"w":370,"h":123,"offX":0,"offY":0,"sourceW":370,"sourceH":123},
+"Btn_Rank":{"x":556,"y":392,"w":370,"h":123,"offX":0,"offY":0,"sourceW":370,"sourceH":123},
+"Btn_MoreGame":{"x":373,"y":517,"w":370,"h":123,"offX":0,"offY":0,"sourceW":370,"sourceH":123},
+"Btn_ChuTi":{"x":1,"y":169,"w":553,"h":166,"offX":0,"offY":0,"sourceW":553,"sourceH":166},
+"Btn_BaoBao":{"x":1,"y":1,"w":553,"h":166,"offX":0,"offY":0,"sourceW":553,"sourceH":166},
+"Tip_WrongAns":{"x":556,"y":201,"w":372,"h":189,"offX":0,"offY":0,"sourceW":372,"sourceH":189},
+"Tip_NoLockChapter":{"x":556,"y":1,"w":447,"h":198,"offX":0,"offY":0,"sourceW":447,"sourceH":198}}}
