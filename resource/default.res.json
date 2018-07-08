@@ -132,71 +132,71 @@
 			"name": "egret_icon_png"
 		},
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "gameEui_json",
+			"url": "gameEui.json",
 			"type": "json",
-			"url": "gameEui.json"
+			"name": "gameEui_json"
 		},
 		{
-			"name": "BtnsSpriteatlas_json",
-			"type": "sheet",
 			"url": "assets/Issue/BtnsSpriteatlas.json",
-			"subkeys": "Tab_PVE,Btn_WuJin,Btn_Sure,Btn_Submit,Btn_StartGame,Btn_Rank,Btn_MoreGame,Btn_ChuTi,Btn_BaoBao,Tip_WrongAns,Tip_NoLockChapter"
-		},
-		{
-			"name": "Img_PhotoBk_png",
-			"type": "image",
-			"url": "assets/Issue/Img_PhotoBk.png"
-		},
-		{
-			"name": "IssueSpriteatlas_json",
 			"type": "sheet",
+			"name": "BtnsSpriteatlas_json",
+			"subkeys": "Btn_BaoBao,Btn_ChuTi,Btn_MoreGame,Btn_Rank,Btn_StartGame,Btn_Submit,Btn_Sure,Btn_WuJin,Tab_PVE,Tip_NoLockChapter,Tip_WrongAns"
+		},
+		{
+			"url": "assets/Issue/Img_PhotoBk.png",
+			"type": "image",
+			"name": "Img_PhotoBk_png"
+		},
+		{
 			"url": "assets/Issue/IssueSpriteatlas.json",
-			"subkeys": "Btn_GainReward,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_Share_InGame,Btn_ShareTIp,Btn_Talk,Btn_Tip,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,Img_Diamond,Img_Lock,Img_Moon,Img_NoLock,Img_RankBk,Img_SelfRankBk,Img_Star,ImgLine,LockBk,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,tab_Tianti,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,Btn_Des"
+			"type": "sheet",
+			"name": "IssueSpriteatlas_json",
+			"subkeys": "Btn_Des,Btn_GainReward,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_ShareTIp,Btn_Share_InGame,Btn_Talk,Btn_Tip,ChapterBk_Lock,ChapterBk_Normal,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,ImgLine,Img_Diamond,Img_Lock,Img_Moon,Img_SelfRankBk,Img_Star,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,tab_Tianti"
 		},
 		{
-			"name": "Tip_DoneChapter_png",
+			"url": "assets/Issue/Tip_DoneChapter.png",
 			"type": "image",
-			"url": "assets/Issue/Tip_DoneChapter.png"
+			"name": "Tip_DoneChapter_png"
 		},
 		{
-			"name": "Tip_Right_png",
+			"url": "assets/Issue/Tip_Right.png",
 			"type": "image",
-			"url": "assets/Issue/Tip_Right.png"
+			"name": "Tip_Right_png"
 		},
 		{
-			"name": "LoginRewardBk_jpg",
+			"url": "assets/LoginRewardBk.jpg",
 			"type": "image",
-			"url": "assets/LoginRewardBk.jpg"
+			"name": "LoginRewardBk_jpg"
 		},
 		{
-			"name": "TipBk_png",
+			"url": "assets/TipBk.png",
 			"type": "image",
-			"url": "assets/TipBk.png"
+			"name": "TipBk_png"
 		},
 		{
-			"name": "ADV_png",
+			"url": "assets/Issue/ADV.png",
 			"type": "image",
-			"url": "assets/Issue/ADV.png"
+			"name": "ADV_png"
 		},
 		{
-			"name": "bg1_jpg",
+			"url": "assets/bg1.jpg",
 			"type": "image",
-			"url": "assets/bg1.jpg"
+			"name": "bg1_jpg"
 		},
 		{
-			"name": "terBk_Lock_png",
+			"url": "assets/Issue/terBk_Lock.png",
 			"type": "image",
-			"url": "assets/Issue/terBk_Lock.png"
+			"name": "terBk_Lock_png"
 		},
 		{
-			"name": "terBk_Normal_png",
+			"url": "assets/Issue/terBk_Normal.png",
 			"type": "image",
-			"url": "assets/Issue/terBk_Normal.png"
+			"name": "terBk_Normal_png"
 		}
 	]
 }
