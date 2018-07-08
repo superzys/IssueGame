@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HomePage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0"/>
+	<e:Image width="372" height="84" y="128" horizontalCenter="2" source="Title"/>
+	<e:Image right="-2" height="185" left="2" source="resource/assets/Issue/ADV.png" bottom="0"/>
+	<e:Button id="Btn_StartGame" label="" y="418" width="370" height="123" horizontalCenter="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_StartGame" source.down="Btn_StartGame" source.disabled="Btn_StartGame"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_Rank" label="" y="574" width="370" height="123" horizontalCenter="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_Rank" source.down="Btn_Rank" source.disabled="Btn_Rank"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_MoreGame" label="" y="734" width="370" height="123" horizontalCenter="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_MoreGame" source.down="Btn_MoreGame" source.disabled="Btn_MoreGame"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_Share" label="" y="290" width="136" height="48" left="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_Share" source.down="Btn_Share" source.disabled="Btn_Share"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_Talk" label="" y="242" width="158" height="144" right="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_Talk" source.down="Btn_Talk" source.disabled="Btn_Talk"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

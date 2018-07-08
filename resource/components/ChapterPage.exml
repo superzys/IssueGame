@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChapterPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="resource/assets/bg.jpg" left="0" right="0" top="0" bottom="0"/>
+	<e:List width="512" height="549" x="64" y="124.61" anchorOffsetX="0" anchorOffsetY="0" itemRendererSkinName="OneChapterCmp">
+		<e:layout>
+       <e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
+		</e:layout>
+		<e:ArrayCollection>
+			<e:Array>
+				<e:Object ss="null"/>
+				<e:Object ss="null"/>
+				<e:Object ss="null"/>
+			</e:Array>
+		</e:ArrayCollection>
+	</e:List>
+    
+</e:Skin>

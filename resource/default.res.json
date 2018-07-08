@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,gameEui_json",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,gameEui_json,BtnsSpriteatlas_json,Img_PhotoBk_png,IssueSpriteatlas_json,Tip_DoneChapter_png,Tip_Right_png,LoginRewardBk_jpg,TipBk_png,ADV_png,bg1_jpg,terBk_Lock_png,terBk_Normal_png",
 			"name": "preload"
 		}
 	],
@@ -140,6 +140,63 @@
 			"name": "gameEui_json",
 			"type": "json",
 			"url": "gameEui.json"
+		},
+		{
+			"name": "BtnsSpriteatlas_json",
+			"type": "sheet",
+			"url": "assets/Issue/BtnsSpriteatlas.json",
+			"subkeys": "Tab_PVE,Btn_WuJin,Btn_Sure,Btn_Submit,Btn_StartGame,Btn_Rank,Btn_MoreGame,Btn_ChuTi,Btn_BaoBao,Tip_WrongAns,Tip_NoLockChapter"
+		},
+		{
+			"name": "Img_PhotoBk_png",
+			"type": "image",
+			"url": "assets/Issue/Img_PhotoBk.png"
+		},
+		{
+			"name": "IssueSpriteatlas_json",
+			"type": "sheet",
+			"url": "assets/Issue/IssueSpriteatlas.json",
+			"subkeys": "Btn_GainReward,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_Share_InGame,Btn_ShareTIp,Btn_Talk,Btn_Tip,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,Img_Diamond,Img_Lock,Img_Moon,Img_NoLock,Img_RankBk,Img_SelfRankBk,Img_Star,ImgLine,LockBk,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,tab_Tianti,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,Btn_Des"
+		},
+		{
+			"name": "Tip_DoneChapter_png",
+			"type": "image",
+			"url": "assets/Issue/Tip_DoneChapter.png"
+		},
+		{
+			"name": "Tip_Right_png",
+			"type": "image",
+			"url": "assets/Issue/Tip_Right.png"
+		},
+		{
+			"name": "LoginRewardBk_jpg",
+			"type": "image",
+			"url": "assets/LoginRewardBk.jpg"
+		},
+		{
+			"name": "TipBk_png",
+			"type": "image",
+			"url": "assets/TipBk.png"
+		},
+		{
+			"name": "ADV_png",
+			"type": "image",
+			"url": "assets/Issue/ADV.png"
+		},
+		{
+			"name": "bg1_jpg",
+			"type": "image",
+			"url": "assets/bg1.jpg"
+		},
+		{
+			"name": "terBk_Lock_png",
+			"type": "image",
+			"url": "assets/Issue/terBk_Lock.png"
+		},
+		{
+			"name": "terBk_Normal_png",
+			"type": "image",
+			"url": "assets/Issue/terBk_Normal.png"
 		}
 	]
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OneChapterCmp" width="546" height="120" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image left="0" right="0" top="0" bottom="0" source="resource/assets/Issue/ChapterBk_Normal.png"/>
+	<e:Image anchorOffsetX="0" horizontalCenter="133" verticalCenter="-3" width="158" anchorOffsetY="0" height="66" source="Img_Moon"/>
+	<e:Image left="0" right="0" top="0" bottom="0" source="sss"/>
+
+</e:Skin>
