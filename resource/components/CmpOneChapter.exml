@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="OneChapterCmp" width="546" height="120" xmlns:e="http://ns.egret.com/eui"
+<e:Skin class="CmpOneChapter" width="546" height="120" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing">
 	<e:Image left="0" right="0" top="0" bottom="0" source="ChapterBk_Normal" />
 	<e:Image anchorOffsetX="0" width="47" anchorOffsetY="0" height="38" verticalCenter="3" horizontalCenter="229.5"

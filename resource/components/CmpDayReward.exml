@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="DayRewardCmp" width="586" height="70" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="CmpDayReward" width="586" height="70" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image id="Img_BkGain" left="0" right="0" top="0" bottom="0" source="DayBk_Gained"/>
 	<e:Image id="Img_BkNot" source="DayBk_NotGain" left="0" right="0" top="0" bottom="0"/>
 	<e:Label id="Lab_Day" text="第一天" y="20" left="8"/>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ChoosePhotoCmp" width="446" height="270" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<!--<e:Skin class="skins.PhotoCmp"  minHeight="270" minWidth="446" xmlns:e="http://ns.egret.com/eui">-->
+
+<e:Group class="Cmp.PhotoCmp" width="446" height="270" xmlns:e="http://ns.egret.com/eui"  >  
+<!--<con:PhotoCmp>-->
 	<e:Button id="Btn_Left" label="" x="55" y="163" width="30" height="44">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -18,4 +21,7 @@
 	</e:Button>
 	<e:Image width="120" height="120" y="42" source="resource/assets/Issue/Photo_0.png" horizontalCenter="0"/>
 
-</e:Skin>
+<!--</con:PhotoCmp>-->
+
+</e:Group>
+<!--</e:Skin>-->

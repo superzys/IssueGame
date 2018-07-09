@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CmpPlayerRankInfo" width="572" height="114" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="ChapterBk_Normal" left="0" right="0" top="0" bottom="0"/>
+	<e:Image id="Img_Photo" x="78" source="Photo_0_png" width="80" height="80" verticalCenter="0"/>
+	<e:Image id="Img_Rank" x="12" width="53" height="96" verticalCenter="0" source="Top_1"/>
+	<e:Label id="Lab_Name" text="Name" x="173" verticalAlign="middle" verticalCenter="0"/>
+	<e:Label id="Lab_Rank" text="?" x="30" verticalCenter="0" textAlign="center" verticalAlign="middle"/>
+	<e:Label id="Lab_Des" text="?" x="446" verticalCenter="-20" verticalAlign="middle"/>
+	<e:Label id="Lab_Lv" text="?" x="446" verticalCenter="15" verticalAlign="middle"/>
+
+
+</e:Skin>

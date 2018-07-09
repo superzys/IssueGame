@@ -12,8 +12,8 @@
             </e:Skin>
         </e:skinName>
     </e:Button>
-    <e:List id="List_Reward" width="586" height="575" y="284" anchorOffsetX="0" anchorOffsetY="0"
-            itemRendererSkinName="DayRewardCmp" scaleX="1" horizontalCenter="0">
+    <e:List id="List_Reward" width="586" height="584" y="284" anchorOffsetX="0" anchorOffsetY="0"
+            scaleX="1" horizontalCenter="0" itemRendererSkinName="CmpDayReward">
         <e:layout>
             <e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
         </e:layout>
