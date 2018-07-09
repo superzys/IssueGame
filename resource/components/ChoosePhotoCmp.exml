@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChoosePhotoCmp" width="446" height="270" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Button id="Btn_Left" label="" x="55" y="163" width="30" height="44">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_Left" source.down="Btn_Left" source.disabled="Btn_Left"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_Right" label="" x="358" y="159">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_Right" source.down="Btn_Right" source.disabled="Btn_Right"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image width="120" height="120" y="42" source="resource/assets/Issue/Photo_0.png" horizontalCenter="0"/>
+
+</e:Skin>

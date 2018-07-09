@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="MoreFunPage" width="400" height="300" xmlns:e="http://ns.egret.com/eui">
+<e:Skin class="MoreFunPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0"/>
+<e:Group horizontalCenter="0">
+	<e:layout>
+       <e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
+		</e:layout>
+	<e:Button id="Btn_ChuTi" label="" x="216" y="70" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_ChuTi" source.down="Btn_ChuTi" source.disabled="Btn_ChuTi"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_WuJin" label="" x="226" y="80" scaleX="1" scaleY="1" visible="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_WuJin" source.down="Btn_WuJin" source.disabled="Btn_WuJin"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="Btn_Baby" label="" x="236" y="90" scaleX="1" scaleY="1" visible="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="Btn_BaoBao" source.down="Btn_BaoBao" source.disabled="Btn_BaoBao"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+        
+</e:Group>
+
 </e:Skin>
