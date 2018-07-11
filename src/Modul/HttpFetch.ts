@@ -15,7 +15,7 @@ class HttpFetch {
 		var request = new egret.HttpRequest();
 		request.responseType = responseType;
 		request.open(url, egret.HttpMethod.POST);
-		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//application/json
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//application/json application/x-www-form-urlencoded
 		request.send(params);
 
 		var promise = new Promise<any>(resolve => {
