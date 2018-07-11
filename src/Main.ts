@@ -103,11 +103,12 @@ class Main extends eui.UILayer {
         request.send(params);
 
         function onGetDone(event: egret.Event) {
-            console.log("http get data");
+            var request = <egret.HttpRequest>event.currentTarget;
+            console.log("http get data ", request.response);
 
         }
         function onGetError(event: egret.IOErrorEvent) {
-            console.log("http get error");
+            console.log("http get error " + event);
         }
         request.addEventListener(egret.Event.COMPLETE, onGetDone, this);
         request.addEventListener(egret.IOErrorEvent.IO_ERROR, onGetError, this);
