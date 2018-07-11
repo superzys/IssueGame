@@ -8,6 +8,7 @@ class LoginSendNet {
         this.avatarUrl = userInfo.avatarUrl;
     }
     public code: string;
+    public SessinId: string;
     public nickName: string;
     public gender: string;
     public city: string;

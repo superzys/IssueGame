@@ -1,0 +1,4 @@
+class CmpPlayerRankInfo {
+	public constructor() {
+	}
+}

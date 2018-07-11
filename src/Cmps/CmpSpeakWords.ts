@@ -1,0 +1,4 @@
+class CmpSpeakWords {
+	public constructor() {
+	}
+}

@@ -3,7 +3,7 @@ class HomePage extends eui.Component {
 		super();
 		this.Cstage = cStage;
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
-		this.skinName = "resource/Pages/LoginRewardPage.exml";
+		this.skinName = "resource/Pages/HomePage.exml";
 	}
 	private uiCompHandler(): void {
 		console.log("\t\tGoodsUI uiCompHandler");

@@ -1,0 +1,4 @@
+class CmpDayReward {
+	public constructor() {
+	}
+}

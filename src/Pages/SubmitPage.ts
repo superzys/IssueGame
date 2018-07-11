@@ -1,16 +1,16 @@
-class ChoosePhotoPage extends eui.Component {
+class SubmitPage extends eui.Component {
 	constructor() {
 		super();
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
-		this.skinName = "resource/Pages/LoginRewardPage.exml";
+		this.skinName = "resource/Pages/SubmitPage.exml";
 	}
 	private uiCompHandler(): void {
 		console.log("\t\tGoodsUI uiCompHandler");
 
-		this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
+		// this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
 		// this.verticalCenter
 	}
-	private Btn_Jump: eui.Button;
+	// private Btn_Jump: eui.Button;
 	protected createChildren(): void {
 		super.createChildren();
 

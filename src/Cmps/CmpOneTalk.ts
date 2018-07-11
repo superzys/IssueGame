@@ -1,0 +1,4 @@
+class CmpOneTalk {
+	public constructor() {
+	}
+}
