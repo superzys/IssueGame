@@ -156,7 +156,7 @@
 			"url": "assets/Issue/IssueSpriteatlas.json",
 			"type": "sheet",
 			"name": "IssueSpriteatlas_json",
-			"subkeys": "Btn_Des,Btn_GainReward,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_ShareTIp,Btn_Share_InGame,Btn_Talk,Btn_Tip,ChapterBk_Lock,ChapterBk_Normal,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,ImgLine,Img_Diamond,Img_Lock,Img_Moon,Img_SelfRankBk,Img_Star,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,tab_Tianti"
+			"subkeys": "Btn_Des,Btn_GainReward,Btn_JumpChapter,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_ShareTIp,Btn_Share_InGame,Btn_Talk,Btn_Tip,ChapterBk_Lock,ChapterBk_Normal,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,ImgLine,Img_Diamond,Img_Lock,Img_Moon,Img_SelfRankBk,Img_Star,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,tab_Tianti"
 		},
 		{
 			"url": "assets/Issue/Tip_DoneChapter.png",
@@ -199,34 +199,34 @@
 			"name": "terBk_Normal_png"
 		},
 		{
-			"name": "Photo_2_png",
+			"url": "assets/Issue/Photo_2.png",
 			"type": "image",
-			"url": "assets/Issue/Photo_2.png"
+			"name": "Photo_2_png"
 		},
 		{
-			"name": "Photo_0_png",
+			"url": "assets/Issue/Photo_0.png",
 			"type": "image",
-			"url": "assets/Issue/Photo_0.png"
+			"name": "Photo_0_png"
 		},
 		{
-			"name": "Photo_1_png",
+			"url": "assets/Issue/Photo_1.png",
 			"type": "image",
-			"url": "assets/Issue/Photo_1.png"
+			"name": "Photo_1_png"
 		},
 		{
-			"name": "Photo_02_png",
+			"url": "assets/Issue/Photo_0.png",
 			"type": "image",
-			"url": "assets/Issue/Photo_0.png"
+			"name": "Photo_02_png"
 		},
 		{
-			"name": "Photo_12_png",
+			"url": "assets/Issue/Photo_1.png",
 			"type": "image",
-			"url": "assets/Issue/Photo_1.png"
+			"name": "Photo_12_png"
 		},
 		{
-			"name": "Photo_22_png",
+			"url": "assets/Issue/Photo_2.png",
 			"type": "image",
-			"url": "assets/Issue/Photo_2.png"
+			"name": "Photo_22_png"
 		}
 	]
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SubmitPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
     <e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0" locked="true" />
-  <e:Group horizontalCenter="-2" y="94.24">
+  <e:Group horizontalCenter="-2" y="132.24">
         <e:Image id="ChooseBk" fillMode="clip" source="resource/assets/Issue/Img_PhotoBk.png" horizontalCenter="4" />
-        <e:Image width="446" height="63" y="83" source="Title_Submit" horizontalCenter="0" />
+        <e:Image width="446" height="63" y="60.5" source="Title_Submit" horizontalCenter="4" />
 		<e:Button id="Btn_Help" label="" x="447" y="38">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -12,7 +12,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:List width="395.45" height="365.15" y="156" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" itemRendererSkinName="CmpOneWords">
+		<e:List id="List_Speak" width="395.45" height="415.82" y="138.67" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-0.5" itemRendererSkinName="CmpSpeakWords">
 			<e:ArrayCollection>
 				<e:Array>
 					<e:Object ss="null"/>
@@ -23,11 +23,15 @@
 				</e:Array>
 			</e:ArrayCollection>
 		</e:List>
+		<e:Label text="答案：" x="55" y="565.65" textColor="0xff0000" size="24"/>
+		<e:Image  y="602" source="PhotoBk_Line" width="446" horizontalCenter="0"/>
+		<e:CheckBox label="我已阅读并同意用户协议" y="619" horizontalCenter="0"/>
+		<e:TextInput id="Ipt_Answer" width="309.33" height="35.67" x="127" y="561" anchorOffsetX="0" anchorOffsetY="0"/>
 
         
     </e:Group>
 
-    <e:Button id="Btn_Submit" label="" y="850" horizontalCenter="0">
+    <e:Button id="Btn_Submit" label="" y="882" horizontalCenter="0.5">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="Btn_Submit" source.down="Btn_Submit" source.disabled="Btn_Submit"/>

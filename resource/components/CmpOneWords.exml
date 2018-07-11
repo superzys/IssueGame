@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="CmpOneWords" width="400" height="200" xmlns:e="http://ns.egret.com/eui">
-	<e:Image width="80" height="80" x="23" y="60" source="Photo_0_png"/>
-
-</e:Skin>

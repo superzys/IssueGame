@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Dg_WrongAnswer" width="640" height="1136" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="resource/assets/TipBk.png" left="0" right="0" top="0" bottom="0"/>
+	<e:Image  source="Tip_WrongAns" horizontalCenter="0" verticalCenter="-120"/>
+</e:Skin>

@@ -60,12 +60,13 @@ class Main extends eui.UILayer {
     private async runGame() {
         await this.loadResource()
         this.createGameScene();
-        const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
+
+        // const result = await RES.getResAsync("description_json")
+        // this.startAnimation(result);
         await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
-
+        this.HttpRequest("http://192.168.10.152:8081/Login", egret.HttpResponseType.TEXT, egret.HttpMethod.POST);
     }
 
     private async loadResource() {
@@ -93,6 +94,24 @@ class Main extends eui.UILayer {
 
         })
     }
+    public HttpRequest(url: string, responseType: string, method: string): void {
+        var params = "{'UserName':'张三', 'Pwd': '10'}";
+        var request = new egret.HttpRequest();
+        request.responseType = responseType;
+        request.open(url, method);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//application/json
+        request.send(params);
+
+        function onGetDone(event: egret.Event) {
+            console.log("http get data");
+
+        }
+        function onGetError(event: egret.IOErrorEvent) {
+            console.log("http get error");
+        }
+        request.addEventListener(egret.Event.COMPLETE, onGetDone, this);
+        request.addEventListener(egret.IOErrorEvent.IO_ERROR, onGetError, this);
+    }
 
     private textfield: egret.TextField;
     /**
@@ -100,13 +119,12 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-       
+
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
-         let group: eui.Component = new ChapterPage(this.stage);
-        // //    new components.
-    
-        
+        //加载首页。 然后等服务器返回登录信息
+        let group: eui.Component = new HomePage(this.stage);
+        // //    new components.           
         group.verticalCenter = 0;
         group.horizontalCenter = 0;
         this.addChild(group);

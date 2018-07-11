@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CmpOneTalk" width="400" height="109" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+
+	<e:Group id="Gp_Self" width="393" height="94" y="0" x="0">
+		<e:Image id="Img_SelfBk" source="DialogBk_Right" anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" left="0" right="0" top="0" bottom="0"/>
+	<e:Image width="70" height="70" x="309" source="Photo_0_png" verticalCenter="-5"/>
+		<e:Label id="Lab_Self" text="??" x="19" y="12.5" textColor="0x000000" anchorOffsetX="0" width="283" anchorOffsetY="0" height="63" verticalAlign="middle" textAlign="right"/>
+	</e:Group>
+	<e:Group id="Gp_Other" width="393" height="94" x="0" y="0">
+		<e:Image id="Img_OtherBk" anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" left="0" right="0" top="0" bottom="0" source="DialogBk_Left"/>
+		<e:Image width="70" height="70" x="14" source="Photo_0_png" verticalCenter="-5"/>
+		<e:Label id="Lab_Left" text="??" x="95" y="12.5" textColor="0x000000" anchorOffsetX="0" width="283" anchorOffsetY="0" height="63" verticalAlign="middle"/>
+	</e:Group>
+
+</e:Skin>
