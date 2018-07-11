@@ -63,10 +63,12 @@ class Main extends eui.UILayer {
 
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
-        await platform.login();
+       const loginCode =  await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
-        this.HttpRequest("http://192.168.10.152:8081/Login", egret.HttpResponseType.TEXT, egret.HttpMethod.POST);
+
+        var getData = await HttpFetch.getInstance().HttpPost("http://192.168.10.152:8081/LoginWx", "{'code':'sss', 'encryptedData': 'ddddd'}");
+        console.log("await  end with " + getData);
     }
 
     private async loadResource() {
@@ -94,25 +96,7 @@ class Main extends eui.UILayer {
 
         })
     }
-    public HttpRequest(url: string, responseType: string, method: string): void {
-        var params = "{'UserName':'张三', 'Pwd': '10'}";
-        var request = new egret.HttpRequest();
-        request.responseType = responseType;
-        request.open(url, method);
-        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//application/json
-        request.send(params);
 
-        function onGetDone(event: egret.Event) {
-            var request = <egret.HttpRequest>event.currentTarget;
-            console.log("http get data ", request.response);
-
-        }
-        function onGetError(event: egret.IOErrorEvent) {
-            console.log("http get error " + event);
-        }
-        request.addEventListener(egret.Event.COMPLETE, onGetDone, this);
-        request.addEventListener(egret.IOErrorEvent.IO_ERROR, onGetError, this);
-    }
 
     private textfield: egret.TextField;
     /**

@@ -10,15 +10,31 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var HomePage = (function (_super) {
     __extends(HomePage, _super);
-    function HomePage() {
+    function HomePage(cStage) {
         var _this = _super.call(this) || this;
+        _this.Cstage = cStage;
         _this.addEventListener(eui.UIEvent.COMPLETE, _this.uiCompHandler, _this);
         _this.skinName = "resource/components/LoginRewardPage.exml";
         return _this;
     }
     HomePage.prototype.uiCompHandler = function () {
         console.log("\t\tGoodsUI uiCompHandler");
-        this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
+        var stageW = this.Cstage.stageWidth;
+        var stageH = this.Cstage.stageHeight;
+        var oldW = this.width;
+        var oldH = this.height;
+        this.width = stageW;
+        this.height = stageH;
+        for (var i = 0; i < this.numChildren; i++) {
+            var child = this.getChildAt(i);
+            if (child.x > 0) {
+                child.x = child.x / oldW * this.width;
+            }
+            if (child.y > 0) {
+                child.y = child.y / oldH * this.height;
+            }
+        }
+        // this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
         // this.verticalCenter
     };
     HomePage.prototype.createChildren = function () {

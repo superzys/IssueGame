@@ -14,14 +14,14 @@
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
-		"bin-debug/components/ChapterPage.js",
-		"bin-debug/components/ChoosePhotoPage.js",
+		"bin-debug/Pages/ChapterPage.js",
+		"bin-debug/Pages/ChoosePhotoPage.js",
 		"bin-debug/LoadingUI.js",
-		"bin-debug/components/GamePage.js",
-		"bin-debug/components/HomePage.js",
-		"bin-debug/components/LoginRewardPage.js",
-		"bin-debug/components/MoreFunPage.js",
-		"bin-debug/components/RankPage.js",
-		"bin-debug/components/SubmitPage.js"
+		"bin-debug/Pages/GamePage.js",
+		"bin-debug/Pages/HomePage.js",
+		"bin-debug/Pages/LoginRewardPage.js",
+		"bin-debug/Pages/MoreFunPage.js",
+		"bin-debug/Pages/RankPage.js",
+		"bin-debug/Pages/SubmitPage.js"
 	]
 }
