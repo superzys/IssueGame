@@ -58,28 +58,45 @@ class Main extends eui.UILayer {
     }
 
     private async runGame() {
+        UICenter.getInstance().SetState( this.stage,this);
+        HttpFetch.getInstance().SetHttpUrl("http://192.168.10.152:8081/");
         await this.loadResource()
         this.createGameScene();
-
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
         const loginCode = await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
 
+        var userId: string = egret.localStorage.getItem("WxIssue_UserId");
+
         let loginSendNet: LoginSendNet = new LoginSendNet(userInfo);
         loginSendNet.code = loginCode.code;
-        loginSendNet.SessinId = "";
+        loginSendNet.UserId = userId;
 
         let Msg = JSON.stringify(loginSendNet);
         console.log(Msg);
 
-
+        UserManger.getInstance().SetUserInfo(loginSendNet);
         // var getData = await HttpFetch.getInstance().HttpPost("http://192.168.10.152:8081/Login", params);
-        var getData = await HttpFetch.getInstance().HttpPost("http://192.168.10.152:8081/LoginWx", Msg);
+        var getData = await HttpFetch.getInstance().HttpPost("LoginWx", Msg);
         //  var getData = await HttpFetch.getInstance().HttpGet("http://192.168.10.152:8081/Login", params);
         console.log("await  end with " + getData);
 
+        if (getData != undefined) {
+            var loginResObj = JSON.parse(getData);
+            if (loginResObj.msg != undefined) {
+                var userInfoObj = JSON.parse(loginResObj.msg);
+                if (userInfoObj.error != undefined) {
+                    console.log("登录错误 " + userInfoObj.error);
+                } else {
+                    console.log("登录成功 " + userInfoObj);
+                    UserManger.getInstance().SetUserGameInfo(userInfoObj);
+                    this.CheckIsShowLoginReward();
+                }
+            }
+
+        }
         // var params = "{'UserName':'张三', 'Pwd': '10'}";
         //   this.HttpRequest("http://192.168.10.152:8081/Login",params, egret.HttpResponseType.TEXT, egret.HttpMethod.POST); 
     }
@@ -139,12 +156,34 @@ class Main extends eui.UILayer {
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
         //加载首页。 然后等服务器返回登录信息
-        let group: eui.Component = new HomePage(this.stage);
+        let group: eui.Component = new HomePage();
+        UICenter.getInstance().AddOnePage(group);
         // //    new components.           
-        group.verticalCenter = 0;
-        group.horizontalCenter = 0;
-        this.addChild(group);
+        // group.verticalCenter = 0;
+        // group.horizontalCenter = 0;
+       
+        // this.addChild(group);
+
     }
+    /**
+     * 看下是否弹出签到
+     */
+    protected CheckIsShowLoginReward(): void {
+
+        if (UserManger.getInstance().userInfoObj.UserGameInfo.RemainSignNumToday > 0)//可以签到
+        {
+            // let stageW = this.stage.stageWidth;
+            // let stageH = this.stage.stageHeight;
+            //加载首页。 然后等服务器返回登录信息
+            let group: eui.Component = new LoginRewardPage();      
+            UICenter.getInstance().AddOnePage(group);
+            // //    new components.           
+            // group.verticalCenter = 0;
+            // group.horizontalCenter = 0;
+            // this.addChild(group);
+        }
+    }
+
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.

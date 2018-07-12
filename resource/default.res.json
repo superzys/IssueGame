@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,gameEui_json,BtnsSpriteatlas_json,Img_PhotoBk_png,IssueSpriteatlas_json,Tip_DoneChapter_png,Tip_Right_png,LoginRewardBk_jpg,TipBk_png,ADV_png,bg1_jpg,terBk_Lock_png,terBk_Normal_png,Photo_2_png,Photo_0_png,Photo_1_png,Photo_02_png,Photo_12_png,Photo_22_png,ChapterData_json,IssueData_Json,UnitConfig_Json",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,gameEui_json,BtnsSpriteatlas_json,Img_PhotoBk_png,IssueSpriteatlas_json,Tip_DoneChapter_png,Tip_Right_png,LoginRewardBk_jpg,TipBk_png,ADV_png,bg1_jpg,terBk_Lock_png,terBk_Normal_png,Photo_2_png,Photo_0_png,Photo_1_png,Photo_02_png,Photo_12_png,Photo_22_png,ChapterData_json,IssueData_Json,UnitConfig_Json,ChapterData2_json,IssueData2_Json,UnitConfig2_Json",
 			"name": "preload"
 		}
 	],
@@ -240,6 +240,21 @@
 		},
 		{
 			"name": "UnitConfig_Json",
+			"type": "bin",
+			"url": "assets/Issue/UnitConfig.Json"
+		},
+		{
+			"name": "ChapterData2_json",
+			"type": "json",
+			"url": "assets/Issue/ChapterData.json"
+		},
+		{
+			"name": "IssueData2_Json",
+			"type": "bin",
+			"url": "assets/Issue/IssueData.Json"
+		},
+		{
+			"name": "UnitConfig2_Json",
 			"type": "bin",
 			"url": "assets/Issue/UnitConfig.Json"
 		}

@@ -1,0 +1,31 @@
+class UserInfo {
+	public constructor() {
+	}
+	public WxUserInfo: LoginSendNet;
+	public UserGameInfo: LoginResNet;
+
+	public GetLoginReward(): LoginRewardStruct[] {
+		let arr: LoginRewardStruct[] = [];
+		for (let i = 0; i < this.UserGameInfo.LoginRewardArr.length; i++) {
+			let oneDay: LoginRewardStruct = new LoginRewardStruct();
+
+			oneDay.rewardNum = this.UserGameInfo.LoginRewardArr[i];
+			oneDay.day = i;
+			if (this.UserGameInfo.SignedNum > i) {
+				oneDay.isGained = true;
+			} else {
+				oneDay.isGained = false;
+			}
+			arr.push(oneDay);
+		}
+		return arr;
+	}
+}
+
+class LoginRewardStruct {
+	public constructor() {
+	}
+	public rewardNum: number;
+	public day: number;
+	public isGained: boolean;
+}

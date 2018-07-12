@@ -1,4 +1,0 @@
-class GameNet {
-	public constructor() {
-	}
-}

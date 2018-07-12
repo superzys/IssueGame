@@ -8,13 +8,16 @@ class HttpFetch {
 		}
 		return this.instance;
 	}
-
+	protected baseHttp: string;
+	public SetHttpUrl(url) {
+		this.baseHttp = url;
+	}
 	// var params = "{'UserName':'张三', 'Pwd': '10'}";
 	public async HttpPost(url: string, params: string = "", responseType: string = egret.HttpResponseType.TEXT): Promise<any> {
 
 		var request = new egret.HttpRequest();
 		request.responseType = responseType;
-		request.open(url, egret.HttpMethod.POST);
+		request.open(this.baseHttp+url, egret.HttpMethod.POST);
 		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//application/json application/x-www-form-urlencoded
 		request.send(params);
 
@@ -35,7 +38,7 @@ class HttpFetch {
 
 		var request = new egret.HttpRequest();
 		request.responseType = responseType;
-		request.open(url +params, egret.HttpMethod.GET);
+		request.open(this.baseHttp+url + params, egret.HttpMethod.GET);
 		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//application/json
 		request.send();
 

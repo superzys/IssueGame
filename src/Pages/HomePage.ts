@@ -1,33 +1,19 @@
 class HomePage extends eui.Component {
-	constructor(cStage) {
+	constructor() {
 		super();
-		this.Cstage = cStage;
+				this.name = "HomePage";
+		// this.Cstage = cStage;
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
 		this.skinName = "resource/Pages/HomePage.exml";
 	}
 	private uiCompHandler(): void {
-		console.log("\t\tGoodsUI uiCompHandler");
-		let stageW = this.Cstage.stageWidth;
-		let stageH = this.Cstage.stageHeight;
-		let oldW = this.width;
-		let oldH = this.height;
-		this.width = stageW;
-		this.height = stageH;
 
-		for (let i = 0; i < this.numChildren; i++) {
-			let child: egret.DisplayObject = this.getChildAt(i);
-			if (child.x > 0) {
-				child.x = child.x / oldW * this.width;
-			}
-			if (child.y > 0) {
-				child.y = child.y / oldH * this.height;
-			}
-		}
-		
+		UICenter.getInstance().LocFitPage(this);
+
 		// this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
 		// this.verticalCenter
 	}
-	private Cstage: egret.Stage;
+	// private Cstage: egret.Stage;
 	private Btn_Talk: eui.Button;
 	private Btn_StartGame: eui.Button;
 	private Btn_Rank: eui.Button;

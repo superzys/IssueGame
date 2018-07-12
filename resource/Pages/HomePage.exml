@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="HomePage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0"/>
+	<e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="scale" left="0" right="0" top="0" bottom="0"/>
 	<e:Image width="372" height="84" y="128" horizontalCenter="2" source="Title"/>
-	<e:Image right="-2" height="185" left="2" source="resource/assets/Issue/ADV.png" bottom="0"/>
+	<e:Image height="185" source="resource/assets/Issue/ADV.png" x="0" bottom="0"/>
 	<e:Button id="Btn_StartGame" label="" y="418" width="370" height="123" horizontalCenter="0">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
