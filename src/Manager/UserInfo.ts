@@ -11,7 +11,7 @@ class UserInfo {
 
 			oneDay.rewardNum = this.UserGameInfo.LoginRewardArr[i];
 			oneDay.day = i;
-			if (this.UserGameInfo.SignedNum > i) {
+			if (this.UserGameInfo.SignedNum >= i) {
 				oneDay.isGained = true;
 			} else {
 				oneDay.isGained = false;
@@ -28,4 +28,18 @@ class LoginRewardStruct {
 	public rewardNum: number;
 	public day: number;
 	public isGained: boolean;
+}
+class AlLChapters{
+	public All: ChapterData[];
+}
+class ChapterData{
+		public constructor() {
+	}
+	public _id: number;
+	public Name: string;
+	public Desc: string;
+	public ChargeNum: number;
+	public HardLv: number;
+	public PlotIDArr: number[];
+	public IsUnLock: boolean;
 }

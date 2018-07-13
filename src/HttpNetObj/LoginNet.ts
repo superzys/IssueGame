@@ -25,7 +25,7 @@ class LoginResNet {
     public SessonId: string;
     public UserId: string;
     public Gold: number;
-    public ChapterId: string;
+    public ChapterId: number;
     public PlotId: string;
     public LoginRewardArr: number[];
     public SignedNum: number;

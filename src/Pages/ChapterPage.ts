@@ -1,23 +1,40 @@
 class ChapterPage extends eui.Component {
-	constructor(cStage) {
+	constructor() {
 		super();
-		this.Cstage = cStage;
+		this.name = "ChapterPage";
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
-		this.skinName = "resource/components/ChapterPage.exml";
+		this.skinName = "resource/Pages/ChapterPage.exml";
 	}
 	private uiCompHandler(): void {
-		console.log("\t\tGoodsUI uiCompHandler");
-		let stageW = this.Cstage.stageWidth;
-		let stageH = this.Cstage.stageHeight;
-		let oldW = this.width;
-		let oldH = this.height;
-		this.width = stageW;
-		this.height = stageH;
+		// UICenter.getInstance().LocFitPage(this);
+		UICenter.getInstance().LocFitPageWithComponent(this, [this.Sc_List]);
+		var data: AlLChapters = RES.getRes("ChapterData_json");
+		let gameInfo: LoginResNet = UserManger.getInstance().userInfoObj.UserGameInfo;
+
+		let arr: ChapterData[] = [];
+		if (data && data.All != undefined) {
+			for (let i = 0; i < data.All.length; i++) {
+				let oneChapter: ChapterData = data.All[i];
+				if (gameInfo != null) {
+					oneChapter.IsUnLock = gameInfo.ChapterId >= oneChapter._id ? true : false
+				}
+
+				arr.push(oneChapter);
+			}
+		}
+
+		var dsListHeros: Array<Object> = arr;
+
+		this.List_Chapters.dataProvider = new eui.ArrayCollection(dsListHeros);
+		this.List_Chapters.itemRenderer = CmpOneChapter;
+
 
 		// this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
 		// this.verticalCenter
 	}
-	private Cstage: egret.Stage;
+	private List_Chapters: eui.List;
+	private Sc_List: eui.Scroller;
+
 	// private Btn_Jump: eui.Button;
 	protected createChildren(): void {
 		super.createChildren();

@@ -1,6 +1,7 @@
 class RankPage extends eui.Component {
 	constructor() {
 		super();
+		this.name = "RankPage";
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
 		this.skinName = "resource/Pages/RankPage.exml";
 	}

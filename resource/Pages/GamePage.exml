@@ -2,7 +2,6 @@
 <e:Skin class="GamePage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
         xmlns:Cmp="Cmp.*">
 	<e:Image source="resource/assets/LoginRewardBk.jpg" left="0" right="0" top="0" bottom="0" />
-
 	<e:Button id="Btn_Tip" label="" verticalCenter="102.5" left="49">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -29,24 +28,32 @@
 	</e:Button>
 	<e:Group id="Gp_Choosed" width="400" height="77" y="748" anchorOffsetX="0" horizontalCenter="0">
 		<e:layout>
-			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"   gap="20"/>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="20" />
 		</e:layout>
 		<Cmp:CmpChooseFontBox width="64" height="66" />
-
-
-
 	</e:Group>
 	<e:Image width="62" height="48" x="489" y="763" source="Img_Diamond" />
 	<e:Label text="???" x="557" y="771.5" textAlign="left" verticalAlign="middle" textColor="0x191717" />
 	<e:Group id="Gp_Show" width="520" height="156" y="864" anchorOffsetX="0" horizontalCenter="0">
 		<e:layout>
-			<e:TileLayout horizontalAlign="center" verticalAlign="middle"  columnAlign="justifyUsingWidth"  orientation="rows" rowAlign="justifyUsingHeight"/>
+			<e:TileLayout horizontalAlign="center" verticalAlign="middle" columnAlign="justifyUsingWidth" orientation="rows"
+			              rowAlign="justifyUsingHeight" />
 		</e:layout>
 		<Cmp:CmpShowFontBox width="65" height="66" x="0" y="0" scaleX="1" scaleY="1" />
-
-
-
 	</e:Group>
-	<e:List width="494" height="510" y="82" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
-	<e:Image  y="622" source="ImgLine" horizontalCenter="0"/>
+	<e:List id="List_Talks" width="540" height="510" y="82" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"
+	        itemRendererSkinName="CmpOneTalk">
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
+		</e:layout>
+		<e:ArrayCollection>
+			<e:Array>
+				<e:Object ss="null" />
+				<e:Object ss="null" />
+				<e:Object ss="null" />
+				<e:Object ss="null" />
+			</e:Array>
+		</e:ArrayCollection>
+	</e:List>
+	<e:Image y="622" source="ImgLine" horizontalCenter="0" />
 </e:Skin>

@@ -1,7 +1,7 @@
 class HomePage extends eui.Component {
 	constructor() {
 		super();
-				this.name = "HomePage";
+		this.name = "HomePage";
 		// this.Cstage = cStage;
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
 		this.skinName = "resource/Pages/HomePage.exml";
@@ -10,8 +10,9 @@ class HomePage extends eui.Component {
 
 		UICenter.getInstance().LocFitPage(this);
 
-		// this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
-		// this.verticalCenter
+		this.Btn_StartGame.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_StartGame, this);
+		this.Btn_Rank.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_OpenRank, this);
+		this.Btn_MoreGame.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_OpenMore, this);
 	}
 	// private Cstage: egret.Stage;
 	private Btn_Talk: eui.Button;
@@ -24,7 +25,32 @@ class HomePage extends eui.Component {
 
 	}
 
-	onButtonClick(): void {
-		console.log("\t\tmain game clickbtn ");
+	BtnClick_StartGame(): void {
+		if (UserManger.getInstance().userInfoObj.UserGameInfo != null) {
+			let group: eui.Component = new ChapterPage();
+			UICenter.getInstance().AddOnePage(group);
+		} else {
+			console.log("尚未登录");
+		}
+	}
+
+
+	BtnClick_OpenRank(): void {
+		if (UserManger.getInstance().userInfoObj.UserGameInfo != null) {
+			let group: eui.Component = new RankPage();
+			UICenter.getInstance().AddOnePage(group);
+		} else {
+			console.log("尚未登录");
+		}
+	}
+
+
+	BtnClick_OpenMore(): void {
+		if (UserManger.getInstance().userInfoObj.UserGameInfo != null) {
+			let group: eui.Component = new MoreFunPage();
+			UICenter.getInstance().AddOnePage(group);
+		} else {
+			console.log("尚未登录");
+		}
 	}
 }

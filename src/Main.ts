@@ -93,10 +93,11 @@ class Main extends eui.UILayer {
                     console.log("登录成功 " + userInfoObj);
                     UserManger.getInstance().SetUserGameInfo(userInfoObj);
                     this.CheckIsShowLoginReward();
+                    return;
                 }
             }
-
         }
+        console.log("服务器连接失败");
         // var params = "{'UserName':'张三', 'Pwd': '10'}";
         //   this.HttpRequest("http://192.168.10.152:8081/Login",params, egret.HttpResponseType.TEXT, egret.HttpMethod.POST); 
     }

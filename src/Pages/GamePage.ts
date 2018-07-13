@@ -1,12 +1,17 @@
 class GamePage extends eui.Component {
 	constructor() {
 		super();
+		this.name = "GamePage";
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
 		this.skinName = "resource/Pages/GamePage.exml";
 	}
 	private uiCompHandler(): void {
-		console.log("\t\tGoodsUI uiCompHandler");
-
+		UICenter.getInstance().LocFitPage(this);
+		var data:JSON = RES.getRes("ChapterData_json");
+		
+		
+        let Msg = JSON.stringify(data);
+        console.log("chapter dat a is  "+Msg);
 		// this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
 		// this.verticalCenter
 	}

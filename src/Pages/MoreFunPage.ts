@@ -1,6 +1,7 @@
 class MoreFunPage extends eui.Component {
 	constructor() {
 		super();
+		this.name = "MoreFunPage";
 		this.addEventListener(eui.UIEvent.COMPLETE, this.uiCompHandler, this);
 		this.skinName = "resource/Pages/MoreFunPage.exml";
 	}

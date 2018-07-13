@@ -34,6 +34,7 @@ class UICenter {
 		for (let i = 0; i < this.PagesArr.length; i++) {
 			if (this.PagesArr[i].name == pageName) {
 				page = this.PagesArr[i];
+				this.PagesArr.splice(i,1);
 				break;
 			}
 		}
@@ -61,6 +62,29 @@ class UICenter {
 			if (child.y > 0) {
 				child.y = child.y / oldH * page.height;
 			}
+		}
+	}
+
+	public LocFitPageWithComponent(page: eui.Component, cmpArr: eui.Component[]) {
+		let stageW = this.stage.stageWidth;
+		let stageH = this.stage.stageHeight;
+		let oldW = page.width;
+		let oldH = page.height;
+		page.width = stageW;
+		page.height = stageH;
+
+		for (let i = 0; i < page.numChildren; i++) {
+			let child: egret.DisplayObject = page.getChildAt(i);
+			if (child.x > 0) {
+				child.x = child.x / oldW * page.width;
+			}
+			if (child.y > 0) {
+				child.y = child.y / oldH * page.height;
+			}
+		}
+		for (let i = 0; i < cmpArr.length; i++) {
+			let child: eui.Component = cmpArr[i];
+			child.height = child.height / oldH * stageH;
 		}
 	}
 }
