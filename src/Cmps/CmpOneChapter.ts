@@ -48,7 +48,7 @@ class CmpOneChapter extends eui.ItemRenderer {
 	}
 	Btn_ClickChapter(): void {
 		if (this.cData.IsUnLock) {
-			let group: eui.Component = new GamePage();
+			let group: eui.Component = new GamePage(this.cData);
 			UICenter.getInstance().AddOnePage(group);
 		} else {
 			let group: eui.Component = new Dg_LockChapterTip();

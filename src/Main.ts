@@ -58,9 +58,11 @@ class Main extends eui.UILayer {
     }
 
     private async runGame() {
+            console.log("runGame");
         UICenter.getInstance().SetState( this.stage,this);
         HttpFetch.getInstance().SetHttpUrl("http://192.168.10.152:8081/");
         await this.loadResource()
+  
         this.createGameScene();
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
@@ -154,7 +156,7 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-
+         console.log("createGameScene");
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
         //加载首页。 然后等服务器返回登录信息

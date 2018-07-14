@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="CmpOneTalk" width="400" height="109" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="CmpOneTalk" width="400" height="109" states="left,right"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 
 	<e:Group id="Gp_Self" width="393" height="94" y="0" x="0">
 		<e:Image id="Img_SelfBk" source="DialogBk_Right" anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" left="0" right="0" top="0" bottom="0"/>

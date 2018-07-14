@@ -43,3 +43,29 @@ class ChapterData{
 	public PlotIDArr: number[];
 	public IsUnLock: boolean;
 }
+class AllPlots{
+	public All: PlotData[];
+}
+class PlotData{
+		public constructor() {
+	}
+	public _id: number;
+	public Name: string;
+	public OptionNum: number;
+	public RewardGoldNum: number;
+
+	public RightAnsArr: string[];
+	public WrongAnsArr: string[];
+	
+	public DialogsArr: OneDialog[];
+}
+class OneDialog{
+		public constructor() {
+	}
+	public PhotoId: number;
+	public IsLeft: boolean;
+	public Words: string;
+
+	public ImgFaceArr: number[];
+}
+

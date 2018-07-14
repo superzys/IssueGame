@@ -8,7 +8,7 @@ class ChapterPage extends eui.Component {
 	private uiCompHandler(): void {
 		// UICenter.getInstance().LocFitPage(this);
 		UICenter.getInstance().LocFitPageWithComponent(this, [this.Sc_List]);
-		var data: AlLChapters = RES.getRes("ChapterData_json");
+		var data: AlLChapters = UserManger.getInstance().AllChaptersInfo;
 		let gameInfo: LoginResNet = UserManger.getInstance().userInfoObj.UserGameInfo;
 
 		let arr: ChapterData[] = [];
