@@ -17,12 +17,14 @@ class GamePage extends eui.Component {
 		this.Btn_Tip.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_ShowTip, this);
 		this.Btn_ShareTIp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_ShareGame, this);
 		this.Btn_ReStart.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_ReStart, this);
+
 	}
 	private Btn_Tip: eui.Button;
 	private Btn_ShareTIp: eui.Button;
 	private Btn_ReStart: eui.Button;
 	private List_Talks: eui.List;
-
+	private Gp_Choosed: eui.Group;
+	private Gp_Show: eui.Group;
 	protected createChildren(): void {
 		super.createChildren();
 
@@ -34,10 +36,15 @@ class GamePage extends eui.Component {
 	//当前打第几关
 	private CurPlotIndex: number;
 	private CurPlot: PlotData;
+	private allFontArr: string[];
+
+	private ChoosedCmpArr: Cmp.CmpChooseFontBox[];
+	private AllShowFontCmpArr: Cmp.CmpShowFontBox[];
 	/**
 	 * 显示本章节内容;
 	 */
 	ShowGameData(): void {
+		this.ChoosedCmpArr = [];
 		if (this.data != undefined) {
 			this.AllPlotsObj = UserManger.getInstance().GetAllPlotObjInChapter(this.data._id);
 			let UserGameInfo: LoginResNet = UserManger.getInstance().userInfoObj.UserGameInfo;
@@ -54,8 +61,10 @@ class GamePage extends eui.Component {
 			} else {
 
 			}
-			this.CurPlot = this.AllPlotsObj[this.CurPlotIndex];
+			this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
 			this.ShowTalkContent();
+			this.AddShowChooseAnswers();
+			this.AddAllOptinsFontCmp();
 		}
 	}
 	ShowTalkContent(): void {
@@ -65,6 +74,45 @@ class GamePage extends eui.Component {
 		this.List_Talks.dataProvider = new eui.ArrayCollection(dsListHeros);
 		this.List_Talks.itemRenderer = CmpOneTalk;
 	}
+
+	/**
+	 * 添加显示选择答案的组件;
+	 */
+	AddShowChooseAnswers(): void {
+		while (this.Gp_Choosed.numChildren > 0) {
+			this.Gp_Choosed.removeChildAt(0);
+		}
+		for (let i = 0; i < this.CurPlot.RightAnsArr.length; i++) {
+			let oneCmp = new Cmp.CmpChooseFontBox();
+			this.Gp_Choosed.addChild(oneCmp);
+			this.ChoosedCmpArr.push(oneCmp);
+		}
+	}
+	AddAllOptinsFontCmp(): void {
+		while (this.Gp_Show.numChildren > 0) {
+			this.Gp_Show.removeChildAt(0);
+		}
+		let WrongAnsArr: string[] = this.CurPlot.RightAnsArr.splice(0);
+		let MorNum: number = this.CurPlot.OptionNum - this.CurPlot.RightAnsArr.length - this.CurPlot.WrongAnsArr.length;
+		if (MorNum > 0) {
+			while (MorNum > 0) {
+				WrongAnsArr.shift();
+				MorNum--;
+			}
+		}
+		this.allFontArr = this.CurPlot.RightAnsArr.concat(this.CurPlot.WrongAnsArr);
+		this.allFontArr.sort(function () {
+			return 0.5 - Math.random();
+		});
+		let optNum = Math.min(this.allFontArr.length, this.CurPlot.OptionNum);
+		for (let i = 0; i < optNum; i++) {
+			let oneCmp = new Cmp.CmpShowFontBox();
+			this.Gp_Show.addChild(oneCmp);
+			oneCmp.SetFont(this.allFontArr[i]);
+			this.AllShowFontCmpArr.push(oneCmp);
+		}
+	}
+
 	BtnClick_ShowTip(): void {
 
 	}

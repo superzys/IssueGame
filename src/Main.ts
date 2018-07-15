@@ -58,11 +58,12 @@ class Main extends eui.UILayer {
     }
 
     private async runGame() {
-            console.log("runGame");
-        UICenter.getInstance().SetState( this.stage,this);
+        console.log("runGame");
+        UICenter.getInstance().SetState(this.stage, this);
         HttpFetch.getInstance().SetHttpUrl("http://192.168.10.152:8081/");
+
         await this.loadResource()
-  
+        UserManger.getInstance().InitPlotData();
         this.createGameScene();
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
@@ -105,8 +106,8 @@ class Main extends eui.UILayer {
     }
     private async loadResource() {
         try {
-            const loadingView = new LoadingUI(this.stage.stageWidth,this.stage.stageHeight);
-   
+            const loadingView = new LoadingUI(this.stage.stageWidth, this.stage.stageHeight);
+
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
             await this.loadTheme();
@@ -156,7 +157,7 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-         console.log("createGameScene");
+        console.log("createGameScene");
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
         //加载首页。 然后等服务器返回登录信息
@@ -165,7 +166,7 @@ class Main extends eui.UILayer {
         // //    new components.           
         // group.verticalCenter = 0;
         // group.horizontalCenter = 0;
-       
+
         // this.addChild(group);
 
     }
@@ -179,7 +180,7 @@ class Main extends eui.UILayer {
             // let stageW = this.stage.stageWidth;
             // let stageH = this.stage.stageHeight;
             //加载首页。 然后等服务器返回登录信息
-            let group: eui.Component = new LoginRewardPage();      
+            let group: eui.Component = new LoginRewardPage();
             UICenter.getInstance().AddOnePage(group);
             // //    new components.           
             // group.verticalCenter = 0;

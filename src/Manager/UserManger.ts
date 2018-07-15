@@ -13,6 +13,7 @@ class UserManger {
 	public AllCpPlotArr: AllPlots[] = [];
 	public AllPlotArr: PlotData[] = [];
 	public AllChaptersInfo: AlLChapters;
+	public allPlotObj: AllPlots;
 	// var param
 	public SetUserInfo(userObj): void {
 		this.userInfoObj.WxUserInfo = userObj;
@@ -25,12 +26,12 @@ class UserManger {
 
 	}
 	public InitPlotData(): void {
-		var data: AllPlots = RES.getRes("IssueData_json");
+		this.allPlotObj = RES.getRes("IssueData_json");
 		this.AllChaptersInfo = RES.getRes("ChapterData_json");
 
-		for (let i = 0; i < data.All.length; i++) {
+		for (let i = 0; i < this.allPlotObj.All.length; i++) {
 
-			let onePlot: PlotData = data.All[i];
+			let onePlot: PlotData = this.allPlotObj.All[i];
 			this.AllPlotArr[onePlot._id] = onePlot;
 		}
 		for (let i = 0; i < this.AllChaptersInfo.All.length; i++) {
