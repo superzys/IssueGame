@@ -45,6 +45,7 @@ class GamePage extends eui.Component {
 	 */
 	ShowGameData(): void {
 		this.ChoosedCmpArr = [];
+		this.AllShowFontCmpArr = [];
 		if (this.data != undefined) {
 			this.AllPlotsObj = UserManger.getInstance().GetAllPlotObjInChapter(this.data._id);
 			let UserGameInfo: LoginResNet = UserManger.getInstance().userInfoObj.UserGameInfo;
@@ -92,15 +93,16 @@ class GamePage extends eui.Component {
 		while (this.Gp_Show.numChildren > 0) {
 			this.Gp_Show.removeChildAt(0);
 		}
-		let WrongAnsArr: string[] = this.CurPlot.RightAnsArr.splice(0);
+		let WrongAnsArr: string[] = this.CurPlot.WrongAnsArr.concat();
 		let MorNum: number = this.CurPlot.OptionNum - this.CurPlot.RightAnsArr.length - this.CurPlot.WrongAnsArr.length;
+
 		if (MorNum > 0) {
 			while (MorNum > 0) {
 				WrongAnsArr.shift();
 				MorNum--;
 			}
 		}
-		this.allFontArr = this.CurPlot.RightAnsArr.concat(this.CurPlot.WrongAnsArr);
+		this.allFontArr = this.CurPlot.RightAnsArr.concat(WrongAnsArr);
 		this.allFontArr.sort(function () {
 			return 0.5 - Math.random();
 		});
@@ -108,11 +110,13 @@ class GamePage extends eui.Component {
 		for (let i = 0; i < optNum; i++) {
 			let oneCmp = new Cmp.CmpShowFontBox();
 			this.Gp_Show.addChild(oneCmp);
-			oneCmp.SetFont(this.allFontArr[i]);
+			oneCmp.SetFont(i, this.allFontArr[i], this.ShowFontCmpClick);
 			this.AllShowFontCmpArr.push(oneCmp);
 		}
 	}
-
+	ShowFontCmpClick(idx: number): void {
+		console.log("click " + idx);
+	}
 	BtnClick_ShowTip(): void {
 
 	}

@@ -28,14 +28,6 @@
 		"resource/Dialog/Dg_LockChapterTip.exml",
 		"resource/Dialog/Dg_RightAnswer.exml",
 		"resource/Dialog/Dg_WrongAnswer.exml",
-		"resource/Pages/ChapterPage.exml",
-		"resource/Pages/ChoosePhotoPage.exml",
-		"resource/Pages/GamePage.exml",
-		"resource/Pages/HomePage.exml",
-		"resource/Pages/LoginRewardPage.exml",
-		"resource/Pages/MoreFunPage.exml",
-		"resource/Pages/RankPage.exml",
-		"resource/Pages/SubmitPage.exml",
 		"resource/eui_skins/ButtonSkin.exml",
 		"resource/eui_skins/CheckBoxSkin.exml",
 		"resource/eui_skins/HScrollBarSkin.exml",
@@ -48,7 +40,15 @@
 		"resource/eui_skins/TextInputSkin.exml",
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
-		"resource/eui_skins/VSliderSkin.exml"
+		"resource/eui_skins/VSliderSkin.exml",
+		"resource/Pages/ChapterPage.exml",
+		"resource/Pages/ChoosePhotoPage.exml",
+		"resource/Pages/GamePage.exml",
+		"resource/Pages/HomePage.exml",
+		"resource/Pages/LoginRewardPage.exml",
+		"resource/Pages/MoreFunPage.exml",
+		"resource/Pages/RankPage.exml",
+		"resource/Pages/SubmitPage.exml"
 	],
 	"path": "resource/default.thm.json"
 }

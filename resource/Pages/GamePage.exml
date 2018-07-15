@@ -30,7 +30,7 @@
 		<e:layout>
 			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="20" />
 		</e:layout>
-		<Cmp:CmpChooseFontBox width="64" height="66" />
+		<!--<Cmp:CmpChooseFontBox width="64" height="66" />-->
 	</e:Group>
 	<e:Image width="62" height="48" x="489" y="763" source="Img_Diamond" />
 	<e:Label text="???" x="557" y="771.5" textAlign="left" verticalAlign="middle" textColor="0x191717" />
@@ -39,7 +39,7 @@
 			<e:TileLayout horizontalAlign="center" verticalAlign="middle" columnAlign="justifyUsingWidth" orientation="rows"
 			              rowAlign="justifyUsingHeight" />
 		</e:layout>
-		<Cmp:CmpShowFontBox width="65" height="66" x="0" y="0" scaleX="1" scaleY="1" />
+
 	</e:Group>
 	<e:List id="List_Talks" width="540" height="510" y="82" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"
 	        itemRendererSkinName="CmpOneTalk">
