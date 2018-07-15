@@ -8,28 +8,26 @@ class Dg_LockChapterTip extends eui.Component {
 
 	private uiCompHandler(): void {
 		UICenter.getInstance().LocFitPage(this);
-this.isDone = false;
+		this.isDone = false;
 		this.tweenClose = egret.Tween.get(this);
 
 		this.tweenClose.wait(2000);
 
 		this.tweenClose.call(this.Btn_ClickLockTip, this);
 
-
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.Btn_ClickLockTip, this);
 	}
-protected isDone :boolean;
+	protected isDone: boolean;
 	protected tweenClose: egret.Tween;
-	// private Btn_Jump: eui.Button;
 	protected createChildren(): void {
 		super.createChildren();
 
 	}
 	Btn_ClickLockTip(): void {
-		if(!this.isDone){
-		this.isDone = true;
-		this.tweenClose.pause();
-		UICenter.getInstance().RemoveOnePage("Dg_LockChapterTip");
+		if (!this.isDone) {
+			this.isDone = true;
+			this.tweenClose.pause();
+			UICenter.getInstance().RemoveOnePage("Dg_LockChapterTip");
 		}
 	}
 

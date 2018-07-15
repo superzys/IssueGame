@@ -20,22 +20,34 @@ module Cmp {
 		private index: number;
 		//点击回调
 		private callFun: Function;
+		private isChoosed: boolean = false;
+		private funTar:eui.Component;
 
-
-		public SetFont(idx: number, str: string, fun: Function): void {
+		public SetFont(idx: number, str: string, fun: Function,tarCmp:eui.Component): void {
+			this.isChoosed = false;
 			this.CurFont = str;
 			this.index = idx;
 			this.callFun = fun;
+			this.funTar = tarCmp;
 			this.ShowFont();
 		}
+		public IsChoosed(isCd: boolean) {
+			this.isChoosed = isCd;
+
+		}
 		BtnClick_ThisFont(): void {
-			if (this.callFun != undefined) {
-				this.callFun(this.index);
+			if (this.callFun != undefined && !this.isChoosed) {
+				this.callFun.call(this.funTar,this.index);
 			}
 		}
 		ShowFont(): void {
-			if (this.CurFont != undefined && this.CurFont != "" && this.Lab_Des != undefined) {
+			if (this.CurFont != undefined && this.Lab_Des != undefined) {
 				this.Lab_Des.text = this.CurFont;
+			}
+		}
+		ChangeFontShow(): void {
+			if (this.isChoosed != undefined && this.Lab_Des != undefined) {
+				this.Lab_Des.visible = !this.isChoosed;
 			}
 		}
 	}

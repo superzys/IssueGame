@@ -86,6 +86,7 @@ class GamePage extends eui.Component {
 		for (let i = 0; i < this.CurPlot.RightAnsArr.length; i++) {
 			let oneCmp = new Cmp.CmpChooseFontBox();
 			this.Gp_Choosed.addChild(oneCmp);
+			oneCmp.InitCmp(i, this.ChooseFontCmpClick, this);
 			this.ChoosedCmpArr.push(oneCmp);
 		}
 	}
@@ -110,12 +111,55 @@ class GamePage extends eui.Component {
 		for (let i = 0; i < optNum; i++) {
 			let oneCmp = new Cmp.CmpShowFontBox();
 			this.Gp_Show.addChild(oneCmp);
-			oneCmp.SetFont(i, this.allFontArr[i], this.ShowFontCmpClick);
+			oneCmp.SetFont(i, this.allFontArr[i], this.ShowFontCmpClick, this);
 			this.AllShowFontCmpArr.push(oneCmp);
 		}
 	}
 	ShowFontCmpClick(idx: number): void {
 		console.log("click " + idx);
+		let oneCmp = this.AllShowFontCmpArr[idx];
+		let str: string = this.allFontArr[idx];
+		oneCmp.IsChoosed(true);
+		for (let i = 0; i < this.ChoosedCmpArr.length; i++) {
+			let chsdCmp = this.ChoosedCmpArr[i];
+			if (chsdCmp.IsEmpty()) {
+				chsdCmp.SetFont(str, idx);
+				break;
+			}
+		}
+		this.CheckIsWin();
+	}
+	/**
+	 * 把选中的点取消掉 
+	 * 还回去 下面的显示列表;
+	 */
+	ChooseFontCmpClick(idx: number, chooseIdx: number): void {
+		console.log("click " + idx);
+		let oneCmp = this.ChoosedCmpArr[idx];
+		oneCmp.SetFont("");
+		let showCmp = this.AllShowFontCmpArr[chooseIdx];
+		showCmp.IsChoosed(false);
+	}
+	CheckIsWin(): void {
+		let isHasWrong: boolean = false;
+		for (let i = 0; i < this.ChoosedCmpArr.length; i++) {
+			let chsdCmp = this.ChoosedCmpArr[i];
+			if (chsdCmp.IsEmpty()) {
+				return;
+			}
+			if (this.CurPlot.RightAnsArr[i] != chsdCmp.GetCurFont()) {
+				isHasWrong = true;
+			}
+		}
+		//到这里基本就是 全都有答案了
+		let group: eui.Component = undefined;
+		if (isHasWrong) {
+			group = new Dg_WrongAnswer(this.Deal_RestartThisPlot, this);
+		} else {
+			group = new Dg_RightAnswer(this.CurPlot.RewardGoldNum, this.Deal_ContinuePlot, this);
+		}
+
+		UICenter.getInstance().AddOnePage(group);
 	}
 	BtnClick_ShowTip(): void {
 
@@ -125,5 +169,18 @@ class GamePage extends eui.Component {
 	}
 	BtnClick_ReStart(): void {
 
+	}
+	Deal_RestartThisPlot() {
+		for (let i = 0; i < this.ChoosedCmpArr.length; i++) {
+			let chsdCmp = this.ChoosedCmpArr[i];
+			chsdCmp.SetFont("");
+		}
+		for (let i = 0; i < this.AllShowFontCmpArr.length; i++) {
+			let showCmp = this.AllShowFontCmpArr[i];
+			showCmp.IsChoosed(false);
+		}
+	}
+	Deal_ContinuePlot(): void {
+		console.log("下一关");
 	}
 }
