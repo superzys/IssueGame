@@ -44,6 +44,7 @@ class ChapterData{
 	public IsUnLock: boolean;
 }
 class AllPlots{
+	public _id: number;
 	public All: PlotData[];
 }
 class PlotData{

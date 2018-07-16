@@ -10,5 +10,5 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Label id="Lab_Gold" text="+?" x="351" y="396" textColor="0xfc0202" anchorOffsetX="0" width="67" anchorOffsetY="0" height="66" size="56"/>
+	<e:Label id="Lab_Gold" text="+?" x="345" y="369.5" textColor="0xfc0202" anchorOffsetX="0" width="123" anchorOffsetY="0" height="79" size="60" textAlign="center" verticalAlign="middle"/>
 </e:Skin>

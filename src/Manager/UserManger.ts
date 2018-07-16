@@ -37,6 +37,7 @@ class UserManger {
 		for (let i = 0; i < this.AllChaptersInfo.All.length; i++) {
 			if (this.AllCpPlotArr[i] == undefined) {
 				this.AllCpPlotArr[i] = new AllPlots();
+				this.AllCpPlotArr[i]._id = i;
 				this.AllCpPlotArr[i].All = [];
 			}
 			let curChapter: AllPlots = this.AllCpPlotArr[i];
@@ -51,6 +52,26 @@ class UserManger {
 			return this.AllCpPlotArr[chapterId];
 		}
 		return undefined;
+	}
+	public GetChapterData(chapterId: number): ChapterData {
+		if (this.AllChaptersInfo.All[chapterId] != undefined) {
+			return this.AllChaptersInfo.All[chapterId];
+		}
+		return undefined;
+	}
+	public IsLastChapter(): boolean {
+		if ((this.userInfoObj.UserGameInfo.ChapterId + 1) >= this.AllCpPlotArr.length) {//没关卡了
+			return true;
+		}
+		return false;
+	}
+	public GetNextChapter(): AllPlots {
+		if ((this.userInfoObj.UserGameInfo.ChapterId + 1) >= this.AllCpPlotArr.length) {//没关卡了
+			return undefined;
+		}
+		this.userInfoObj.UserGameInfo.ChapterId++;
+		let curChapter: AllPlots = this.AllCpPlotArr[this.userInfoObj.UserGameInfo.ChapterId];
+		return curChapter;
 	}
 
 }

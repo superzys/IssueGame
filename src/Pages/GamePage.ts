@@ -36,6 +36,7 @@ class GamePage extends eui.Component {
 	//当前打第几关
 	private CurPlotIndex: number;
 	private CurPlot: PlotData;
+
 	private allFontArr: string[];
 
 	private ChoosedCmpArr: Cmp.CmpChooseFontBox[];
@@ -83,6 +84,7 @@ class GamePage extends eui.Component {
 		while (this.Gp_Choosed.numChildren > 0) {
 			this.Gp_Choosed.removeChildAt(0);
 		}
+		this.ChoosedCmpArr = [];
 		for (let i = 0; i < this.CurPlot.RightAnsArr.length; i++) {
 			let oneCmp = new Cmp.CmpChooseFontBox();
 			this.Gp_Choosed.addChild(oneCmp);
@@ -94,6 +96,9 @@ class GamePage extends eui.Component {
 		while (this.Gp_Show.numChildren > 0) {
 			this.Gp_Show.removeChildAt(0);
 		}
+		this.AllShowFontCmpArr = [];
+		this.allFontArr = [];
+
 		let WrongAnsArr: string[] = this.CurPlot.WrongAnsArr.concat();
 		let MorNum: number = this.CurPlot.OptionNum - this.CurPlot.RightAnsArr.length - this.CurPlot.WrongAnsArr.length;
 
@@ -156,7 +161,12 @@ class GamePage extends eui.Component {
 		if (isHasWrong) {
 			group = new Dg_WrongAnswer(this.Deal_RestartThisPlot, this);
 		} else {
-			group = new Dg_RightAnswer(this.CurPlot.RewardGoldNum, this.Deal_ContinuePlot, this);
+			//判断后面还有关卡吗
+			if ((this.CurPlotIndex + 1) >= this.AllPlotsObj.All.length) {//通关
+				group = new Dg_ChapterDone(this.Deal_NextChapter, this);
+			} else {
+				group = new Dg_RightAnswer(this.CurPlot.RewardGoldNum, this.Deal_ContinuePlot, this);
+			}
 		}
 
 		UICenter.getInstance().AddOnePage(group);
@@ -168,7 +178,7 @@ class GamePage extends eui.Component {
 
 	}
 	BtnClick_ReStart(): void {
-
+		this.Deal_RestartThisPlot();
 	}
 	Deal_RestartThisPlot() {
 		for (let i = 0; i < this.ChoosedCmpArr.length; i++) {
@@ -182,5 +192,24 @@ class GamePage extends eui.Component {
 	}
 	Deal_ContinuePlot(): void {
 		console.log("下一关");
+		this.CurPlotIndex++;
+		this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
+		this.ShowTalkContent();
+		this.AddShowChooseAnswers();
+		this.AddAllOptinsFontCmp();
 	}
+	Deal_NextChapter(): void {
+
+		this.AllPlotsObj = UserManger.getInstance().GetNextChapter();
+		if (this.AllPlotsObj != undefined) {
+			this.CurPlotIndex = 0;
+			this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
+			this.data = UserManger.getInstance().GetChapterData(this.CurPlot._id);
+			this.ShowTalkContent();
+			this.AddShowChooseAnswers();
+			this.AddAllOptinsFontCmp();
+		}
+
+	}
+
 }
