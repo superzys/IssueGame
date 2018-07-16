@@ -8,6 +8,7 @@ module Cmp {
 		}
 		private uiCompHandler(): void {
 			this.ShowFont();
+			this.ChangeFontShow();
 			this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_ThisFont, this);
 		}
 
@@ -21,9 +22,9 @@ module Cmp {
 		//点击回调
 		private callFun: Function;
 		private isChoosed: boolean = false;
-		private funTar:eui.Component;
+		private funTar: eui.Component;
 
-		public SetFont(idx: number, str: string, fun: Function,tarCmp:eui.Component): void {
+		public SetFont(idx: number, str: string, fun: Function, tarCmp: eui.Component): void {
 			this.isChoosed = false;
 			this.CurFont = str;
 			this.index = idx;
@@ -33,11 +34,14 @@ module Cmp {
 		}
 		public IsChoosed(isCd: boolean) {
 			this.isChoosed = isCd;
-
+			this.ChangeFontShow();
+		}
+		public GetCurFont(): string {
+			return this.CurFont;
 		}
 		BtnClick_ThisFont(): void {
 			if (this.callFun != undefined && !this.isChoosed) {
-				this.callFun.call(this.funTar,this.index);
+				this.callFun.call(this.funTar, this.index);
 			}
 		}
 		ShowFont(): void {

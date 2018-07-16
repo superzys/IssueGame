@@ -2,7 +2,7 @@
 <e:Skin class="GamePage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
         xmlns:Cmp="Cmp.*">
 	<e:Image source="resource/assets/LoginRewardBk.jpg" left="0" right="0" top="0" bottom="0" />
-	<e:Button id="Btn_Tip" label="" verticalCenter="102.5" left="49">
+	<e:Button id="Btn_Tip" label="" left="49" y="644">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="Btn_Tip" source.down="Btn_Tip" source.disabled="Btn_Tip" />
@@ -10,7 +10,7 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Button id="Btn_ShareTIp" label="" verticalCenter="102.5" right="60">
+	<e:Button id="Btn_ShareTIp" label="" x="385" y="644">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="Btn_ShareTIp" source.down="Btn_ShareTIp" source.disabled="Btn_ShareTIp" />
@@ -33,7 +33,7 @@
 		<!--<Cmp:CmpChooseFontBox width="64" height="66" />-->
 	</e:Group>
 	<e:Image width="62" height="48" x="489" y="763" source="Img_Diamond" />
-	<e:Label text="???" x="557" y="771.5" textAlign="left" verticalAlign="middle" textColor="0x191717" />
+	<e:Label id="Lab_Gold" text="???" x="557" y="771.5" textAlign="left" verticalAlign="middle" textColor="0x191717" />
 	<e:Group id="Gp_Show" width="520" height="156" y="864" anchorOffsetX="0" horizontalCenter="0">
 		<e:layout>
 			<e:TileLayout horizontalAlign="center" verticalAlign="middle" columnAlign="justifyUsingWidth" orientation="rows"

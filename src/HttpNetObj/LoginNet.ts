@@ -31,6 +31,7 @@ class LoginResNet {
     public SignedNum: number;
     public RemainSignNumToday: number;
     public ShareTodayNum: number;
+    public PassedPlotIdArr: number[];
 
 }
 

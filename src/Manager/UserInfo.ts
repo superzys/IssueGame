@@ -54,6 +54,7 @@ class PlotData{
 	public Name: string;
 	public OptionNum: number;
 	public RewardGoldNum: number;
+	public TipCostGold: number;
 
 	public RightAnsArr: string[];
 	public WrongAnsArr: string[];

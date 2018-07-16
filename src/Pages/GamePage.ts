@@ -23,6 +23,7 @@ class GamePage extends eui.Component {
 	private Btn_ShareTIp: eui.Button;
 	private Btn_ReStart: eui.Button;
 	private List_Talks: eui.List;
+	private Lab_Gold: eui.Label;
 	private Gp_Choosed: eui.Group;
 	private Gp_Show: eui.Group;
 	protected createChildren(): void {
@@ -64,10 +65,14 @@ class GamePage extends eui.Component {
 
 			}
 			this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
-			this.ShowTalkContent();
-			this.AddShowChooseAnswers();
-			this.AddAllOptinsFontCmp();
+			this.StartShowUI();
 		}
+	}
+	StartShowUI(): void {
+		this.Lab_Gold.text = UserManger.getInstance().userInfoObj.UserGameInfo.Gold + "";
+		this.ShowTalkContent();
+		this.AddShowChooseAnswers();
+		this.AddAllOptinsFontCmp();
 	}
 	ShowTalkContent(): void {
 		// this.data.
@@ -145,6 +150,7 @@ class GamePage extends eui.Component {
 		let showCmp = this.AllShowFontCmpArr[chooseIdx];
 		showCmp.IsChoosed(false);
 	}
+
 	CheckIsWin(): void {
 		let isHasWrong: boolean = false;
 		for (let i = 0; i < this.ChoosedCmpArr.length; i++) {
@@ -163,15 +169,48 @@ class GamePage extends eui.Component {
 		} else {
 			//判断后面还有关卡吗
 			if ((this.CurPlotIndex + 1) >= this.AllPlotsObj.All.length) {//通关
-				group = new Dg_ChapterDone(this.Deal_NextChapter, this);
+				group = new Dg_ChapterDone(this.data, this.CurPlot, this.Deal_NextChapter, this);
 			} else {
-				group = new Dg_RightAnswer(this.CurPlot.RewardGoldNum, this.Deal_ContinuePlot, this);
+
+				let isPassed = UserManger.getInstance().IsPassedThePlot(this.data._id, this.CurPlot._id);
+				if (isPassed) {
+					this.Deal_ContinuePlot();
+					return;
+				}
+				//如果是第一次破关的话
+				group = new Dg_RightAnswer(this.data, this.CurPlot, this.Deal_ContinuePlot, this);
 			}
 		}
 
 		UICenter.getInstance().AddOnePage(group);
 	}
+	/**
+	 * 点击提示的话。 扣钱判断
+	 */
 	BtnClick_ShowTip(): void {
+		if (UserManger.getInstance().userInfoObj.UserGameInfo.Gold >= this.CurPlot.TipCostGold) {//钱够
+			this.Deal_SendReqCostTip();//不等服务器返回直接  进行提示
+
+			let getIndex: number = Math.floor((0.5 + Math.random()) * (this.CurPlot.RightAnsArr.length-1));
+			let tipStr: string = this.CurPlot.RightAnsArr[getIndex];
+			let chsdCmp = this.ChoosedCmpArr[getIndex];
+			//找到这个答案的位置
+			for (let i = 0; i < this.AllShowFontCmpArr.length; i++) {
+				let showCmp = this.AllShowFontCmpArr[i];
+				if (showCmp.GetCurFont() == tipStr) {
+					//是这个的话
+					chsdCmp.SetFont(tipStr, i);
+					showCmp.IsChoosed(true);
+					break;
+				}
+			}
+			 UserManger.getInstance().userInfoObj.UserGameInfo.Gold -= this.CurPlot.TipCostGold;
+			this.Lab_Gold.text = UserManger.getInstance().userInfoObj.UserGameInfo.Gold + "";
+		} else {
+			console.log("钱不够");
+		}
+	}
+	async Deal_SendReqCostTip() {
 
 	}
 	BtnClick_ShareGame(): void {
@@ -190,13 +229,12 @@ class GamePage extends eui.Component {
 			showCmp.IsChoosed(false);
 		}
 	}
-	Deal_ContinuePlot(): void {
+	Deal_ContinuePlot() {
 		console.log("下一关");
+
 		this.CurPlotIndex++;
 		this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
-		this.ShowTalkContent();
-		this.AddShowChooseAnswers();
-		this.AddAllOptinsFontCmp();
+		this.StartShowUI();
 	}
 	Deal_NextChapter(): void {
 
@@ -205,11 +243,8 @@ class GamePage extends eui.Component {
 			this.CurPlotIndex = 0;
 			this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
 			this.data = UserManger.getInstance().GetChapterData(this.CurPlot._id);
-			this.ShowTalkContent();
-			this.AddShowChooseAnswers();
-			this.AddAllOptinsFontCmp();
+			this.StartShowUI();
 		}
-
 	}
 
 }
