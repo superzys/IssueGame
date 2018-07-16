@@ -65,12 +65,12 @@ class UserManger {
 		}
 		return false;
 	}
-	public GetNextChapter(): AllPlots {
-		if ((this.userInfoObj.UserGameInfo.ChapterId + 1) >= this.AllCpPlotArr.length) {//没关卡了
+	public GetNextChapter(curChapterId:number): AllPlots {
+		if ((curChapterId + 1) >= this.AllCpPlotArr.length) {//没关卡了
 			return undefined;
 		}
-		this.userInfoObj.UserGameInfo.ChapterId++;
-		let curChapter: AllPlots = this.AllCpPlotArr[this.userInfoObj.UserGameInfo.ChapterId];
+		// this.userInfoObj.UserGameInfo.ChapterId++;
+		let curChapter: AllPlots = this.AllCpPlotArr[curChapterId];
 		return curChapter;
 	}
 

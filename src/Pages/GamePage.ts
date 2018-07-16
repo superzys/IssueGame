@@ -200,7 +200,7 @@ class GamePage extends eui.Component {
 	}
 	Deal_NextChapter(): void {
 
-		this.AllPlotsObj = UserManger.getInstance().GetNextChapter();
+		this.AllPlotsObj = UserManger.getInstance().GetNextChapter(this.data._id);
 		if (this.AllPlotsObj != undefined) {
 			this.CurPlotIndex = 0;
 			this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
