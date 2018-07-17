@@ -2,8 +2,15 @@ class CmpOneTalk extends eui.ItemRenderer {
 	constructor() {
 		super();
 
+        this.addEventListener( eui.UIEvent.COMPLETE, this.uiCompHandler, this );
 		this.skinName = "CmpOneTalk";
 	}
+	private uiCompHandler(): void {
+	}
+	protected createChildren(): void {
+		super.createChildren();
+	}
+
 
 	private Img_Photo: eui.Image;
 	private Lab_Words: eui.Label;

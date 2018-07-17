@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SubmitPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-    <e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0" locked="true" />
+    <e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0" />
   <e:Group horizontalCenter="-2" y="132.24">
         <e:Image id="ChooseBk" fillMode="clip" source="resource/assets/Issue/Img_PhotoBk.png" horizontalCenter="4" />
         <e:Image width="446" height="63" y="60.5" source="Title_Submit" horizontalCenter="4" />

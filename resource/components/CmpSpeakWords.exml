@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="CmpSpeakWords" width="400" height="109" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-
+<e:Skin class="CmpSpeakWords" width="400" height="109" states="left,right" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="Gp_Self" width="393" height="94" y="0" x="0">
-		<e:Image id="Img_SelfBk" source="DialogBk_Right" anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" left="0" right="0" top="0" bottom="0"/>
-	<e:Image width="70" height="70" x="309" source="Photo_0_png" verticalCenter="-5"/>
-		<e:Label id="Lab_Self" text="??" x="19" y="12.5" textColor="0x000000" anchorOffsetX="0" width="283" anchorOffsetY="0" height="63" verticalAlign="middle" textAlign="right" visible="false"/>
-		<e:TextInput id="Imput_Self" width="283" height="63" x="14" y="10" textColor="0x000000" enabled="true"/>
+		<e:Image id="Img_Bk" source.right="DialogBk_Right" source.left="DialogBk_Left" left="0" right="0" top="0" bottom="0"
+		         anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" />
+		<e:Image id="Img_Photo" width="70" height="70" x.right="309" x.left="14" source="Photo_0_png" verticalCenter="-5" />
+		<!--<e:Label id="Lab_Self" text="??" x="19" y="12.5" textColor="0x000000" anchorOffsetX="0" width="283"
+		             anchorOffsetY="0" height="63" verticalAlign="middle" textAlign="right" visible="false" />
+		-->
+		<e:TextInput id="Imput_Words" width="283" height="63" x.right="19" x.left="95" y="10" textColor="0x000000"
+		             enabled="true" />
 	</e:Group>
-	<e:Group id="Gp_Other" width="393" height="94" x="0" y="0" visible="false">
-		<e:Image id="Img_OtherBk" anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" left="0" right="0" top="0" bottom="0" source="DialogBk_Left"/>
-		<e:Image width="70" height="70" x="14" source="Photo_0_png" verticalCenter="-5"/>
-		<e:Label id="Lab_Left" text="??" x="95" y="12.5" textColor="0x000000" anchorOffsetX="0" width="283" anchorOffsetY="0" height="63" verticalAlign="middle" visible="false"/>
-		<e:TextInput id="Imput_Left" width="283" height="63" x="98" y="10" textColor="0x000000"  enabled="true" />
-	</e:Group>
-
+	<!--<e:Group id="Gp_Other" width="393" height="94" x="0" y="0" visible="false">
+	<e:Image id="Img_OtherBk" anchorOffsetX="0" anchorOffsetY="0" scaleY="-1" scale9Grid="23,16,31,53" left="0" right="0"
+	         top="0" bottom="0" source="DialogBk_Left" />
+	<e:Image width="70" height="70" x="14" source="Photo_0_png" verticalCenter="-5" />
+	<e:Label id="Lab_Left" text="??" x="95" y="12.5" textColor="0x000000" anchorOffsetX="0" width="283" anchorOffsetY="0"
+	         height="63" verticalAlign="middle" visible="false" />
+	<e:TextInput id="Imput_Left" width="283" height="63" x="98" y="10" textColor="0x000000" enabled="true" />
+</e:Group>
+-->
 </e:Skin>

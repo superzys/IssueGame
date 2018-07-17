@@ -156,7 +156,7 @@
 			"url": "assets/Issue/IssueSpriteatlas.json",
 			"type": "sheet",
 			"name": "IssueSpriteatlas_json",
-			"subkeys": "Btn_Des,Btn_GainReward,Btn_JumpChapter,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_ShareTIp,Btn_Share_InGame,Btn_Talk,Btn_Tip,ChapterBk_Lock,ChapterBk_Normal,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,ImgLine,Img_Diamond,Img_Lock,Img_Moon,Img_SelfRankBk,Img_Star,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,tab_Tianti"
+			"subkeys": "Btn_Des,Btn_GainReward,Btn_Left,Btn_Next,Btn_ReStart,Btn_Return,Btn_Right,Btn_Share,Btn_ShareTIp,Btn_Share_InGame,Btn_Talk,Btn_Tip,ChapterBk_Lock,ChapterBk_Normal,ChooeFontBK,DayBk_Gained,DayBk_NotGain,DialogBk_Left,DialogBk_Right,ImgLine,Img_Diamond,Img_Lock,Img_Moon,Img_SelfRankBk,Img_Star,PhotoBk_Line,Scorll_Bk,Scorll_Top,ShowFontBk,Tab_Send,Title,Title_ChoosePhoto,Title_Reward,Title_Submit,Top_1,Top_2,Top_3,tab_Tianti"
 		},
 		{
 			"url": "assets/Issue/Tip_DoneChapter.png",
@@ -239,9 +239,9 @@
 			"name": "ChapterData_json"
 		},
 		{
-			"name": "IssueData_json",
+			"url": "assets/Issue/IssueData.json",
 			"type": "json",
-			"url": "assets/Issue/IssueData.json"
+			"name": "IssueData_json"
 		}
 	]
 }

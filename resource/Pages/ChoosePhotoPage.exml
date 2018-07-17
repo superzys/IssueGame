@@ -2,13 +2,14 @@
 <e:Skin class="ChoosePhotoPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" 
         xmlns:w="http://ns.egret.com/wing"  xmlns:Cmp="Cmp.*">
     <e:Image id="Bk" source="resource/assets/bg.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0" locked="true" />
-    <e:Group horizontalCenter="-2" y="94.24">
+    <e:Group id="Gp_Photo" horizontalCenter="-2" y="94.24">
         <e:Image id="ChooseBk" fillMode="clip" source="resource/assets/Issue/Img_PhotoBk.png" horizontalCenter="4" />
         <e:Image width="446" height="63" y="83" source="Title_ChoosePhoto" horizontalCenter="0" />
         <e:Image width="446" height="1" y="406" source="PhotoBk_Line" anchorOffsetY="0"  horizontalCenter="0"/>
 
-		<Cmp:PhotoCmp width="446" height="270" y="163" horizontalCenter="0"/>
-        <Cmp:PhotoCmp width="446" height="270" y="392" horizontalCenter="0"/>
+		<!--<Cmp:PhotoCmp id="Cmp_Left" width="446" height="270" y="163" horizontalCenter="0"/>
+        <Cmp:PhotoCmp id="Cmp_Right" width="446" height="270" y="392" horizontalCenter="0">
+				</Cmp:PhotoCmp>-->
         
     </e:Group>
 

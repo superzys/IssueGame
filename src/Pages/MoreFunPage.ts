@@ -6,18 +6,20 @@ class MoreFunPage extends eui.Component {
 		this.skinName = "resource/Pages/MoreFunPage.exml";
 	}
 	private uiCompHandler(): void {
-		console.log("\t\tGoodsUI uiCompHandler");
 
-		// this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
-		// this.verticalCenter
+		UICenter.getInstance().LocFitPage(this);
+		this.Btn_ChuTi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_ChuTi, this);
+
 	}
-	// private Btn_Jump: eui.Button;
+	private Btn_ChuTi: eui.Button;
+
 	protected createChildren(): void {
 		super.createChildren();
 
 	}
 
-	onButtonClick(): void {
-		console.log("\t\tmain game clickbtn ");
+	BtnClick_ChuTi(): void {
+			let group: eui.Component = new ChoosePhotoPage();
+			UICenter.getInstance().AddOnePage(group,true);
 	}
 }
