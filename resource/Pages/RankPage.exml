@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="RankPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-    <e:Image id="Bk" source="resource/assets/LoginRewardBk.jpg" fillMode="clip" left="0" right="0" top="0" bottom="0" locked="true" />
-	<e:List width="572" height="632" y="208" itemRendererSkinName="CmpPlayerRankInfo" anchorOffsetY="0" horizontalCenter="0">
-        <e:layout>
-            <e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
-        </e:layout>
-		<e:ArrayCollection>
-			<e:Array>
-				<e:Object ss="null"/>
-				<e:Object ss="null"/>
-				<e:Object ss="null"/>
-				<e:Object ss="null"/>
-				<e:Object ss="null"/>
-				<e:Object ss="null"/>
-				<e:Object ss="null"/>
-			</e:Array>
-		</e:ArrayCollection>
-	</e:List>
-	<e:Button id="Btn_GainReward" label="" x="208" y="886">
+	<e:Image id="Bk" source="resource/assets/LoginRewardBk.jpg"  left="0" right="0" top="0" bottom="0" />
+	<e:Scroller id="Sc_List" width="598" height="628" y="213.5" horizontalCenter="0">
+		<e:List id="List_Rank" width="572"  top="0" bottom="0"  y="208" itemRendererSkinName="CmpPlayerRankInfo" anchorOffsetY="0"
+		        horizontalCenter="0">
+			<e:layout>
+				<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
+			</e:layout>
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+				</e:Array>
+			</e:ArrayCollection>
+		</e:List>
+		<e:Skin>
+			<e:VScrollBar id="verticalScrollBar" width="13" minHeight="100%" height="100%" right="0">
+				<e:Skin>
+					<e:Image id="barBk" width="13" top="0" bottom="0" source="Scorll_Bk" scale9Grid="1,1,4,4" />
+					<e:Image id="thumb" width="13" source="Scorll_Top" scale9Grid="1,1,4,4" />
+				</e:Skin>
+			</e:VScrollBar>
+		</e:Skin>
+	</e:Scroller>
+
+	<e:Button id="Btn_GainReward" label="" x="208" y="886" visible="false">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="Btn_GainReward" source.down="Btn_GainReward" source.disabled="Btn_GainReward"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image width="100%" height="100%" source="Btn_GainReward" source.down="Btn_GainReward"
+				         source.disabled="Btn_GainReward" />
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Group width="559" height="71" y="91" left="40">
-      <e:layout>
-            <e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
-        </e:layout>
+	<e:Group width="559" height="71" y="132.5" horizontalCenter="0.5">
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
+		</e:layout>
 		<e:Button id="Tab_PVE" label="" x="44" y="40">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="Tab_PVE" source.down="Tab_PVE" source.disabled="Tab_PVE"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image width="100%" height="100%" source="Tab_PVE" source.down="Tab_PVE" source.disabled="Tab_PVE" />
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
 		<e:Button id="Tab_Send" label="" x="54" y="50">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="Tab_Send" source.down="Tab_Send" source.disabled="Tab_Send"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image width="100%" height="100%" source="Tab_Send" source.down="Tab_Send" source.disabled="Tab_Send" />
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
 		<e:Button id="tab_Tianti" label="" x="64" y="60">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="tab_Tianti" source.down="tab_Tianti" source.disabled="tab_Tianti"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image width="100%" height="100%" source="tab_Tianti" source.down="tab_Tianti" source.disabled="tab_Tianti" />
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-    </e:Group>
-
+	</e:Group>
+	<e:Group id="Gp_SelfInfo" y="878" horizontalCenter="0" width="572">
+		<e:Image source="Img_SelfRankBk" left="0" right="0" top="0" bottom="0" />
+		<e:Image id="Img_Photo" x="17" source="Photo_0_png" width="80" height="80" verticalCenter="0" />
+		<e:Label id="Lab_Name" text="Name" x="112" verticalAlign="middle" verticalCenter="0" />
+		<e:Label id="Lab_Des" text="?" x="361" verticalCenter="-15" verticalAlign="middle" textAlign="center" width="201" />
+		<e:Label id="Lab_Lv" text="?" x="361" verticalCenter="20" verticalAlign="middle" textAlign="center" width="201" />
+	</e:Group>
 </e:Skin>

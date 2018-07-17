@@ -5,8 +5,8 @@
 	<e:Image id="Img_Rank" x="12" width="53" height="96" verticalCenter="0" source="Top_1"/>
 	<e:Label id="Lab_Name" text="Name" x="173" verticalAlign="middle" verticalCenter="0"/>
 	<e:Label id="Lab_Rank" text="?" x="30" verticalCenter="0" textAlign="center" verticalAlign="middle"/>
-	<e:Label id="Lab_Des" text="?" x="446" verticalCenter="-20" verticalAlign="middle"/>
-	<e:Label id="Lab_Lv" text="?" x="446" verticalCenter="15" verticalAlign="middle"/>
+	<e:Label id="Lab_Des" text="?" x="357" verticalCenter="-15" verticalAlign="middle" width="200" textAlign="center"/>
+	<e:Label id="Lab_Lv" text="?" x="357" verticalCenter="20" verticalAlign="middle" width="200" textAlign="center"/>
 
 
 </e:Skin>

@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ChapterPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="resource/assets/bg.jpg" left="0" right="0" top="0" bottom="0"/>
-	<e:Scroller id="Sc_List" width="568" height="802" y="120" horizontalCenter="0">
-	
-			<e:List id="List_Chapters" width="542.42" top="0" bottom="0" x="8" y="66" anchorOffsetX="0" anchorOffsetY="0" itemRendererSkinName="CmpOneChapter" scaleX="1" scaleY="1">
-				<e:layout>
-				<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14"/>
-				</e:layout>
-				<e:ArrayCollection>
+<e:Skin class="ChapterPage" width="640" height="1136" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="resource/assets/bg.jpg" left="0" right="0" top="0" bottom="0" />
+	<e:Scroller id="Sc_List" width="568" height="802" y="120" x="36">
+		<e:List id="List_Chapters" width="542.42" top="0" bottom="0"  y="66" horizontalCenter="0"  anchorOffsetY="0"
+		        itemRendererSkinName="CmpOneChapter" scaleX="1" scaleY="1">
+			<e:layout>
+				<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="14" />
+			</e:layout>
+			<e:ArrayCollection>
 				<e:Array>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
-					<e:Object ss="null"/>
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
+					<e:Object ss="null" />
 				</e:Array>
-				</e:ArrayCollection>
-			</e:List>
-			<e:Skin>
+			</e:ArrayCollection>
+		</e:List>
+		<e:Skin>
 			<e:VScrollBar id="verticalScrollBar" width="13" minHeight="100%" height="100%" right="0">
 				<e:Skin>
-					<e:Image id="barBk" width="13" top="0" bottom="0" source="Scorll_Bk"  scale9Grid="1,1,4,4"/>
-					<e:Image id="thumb" width="13" source="Scorll_Top"  scale9Grid="1,1,4,4"/>
+					<e:Image id="barBk" width="13" top="0" bottom="0" source="Scorll_Bk" scale9Grid="1,1,4,4" />
+					<e:Image id="thumb" width="13" source="Scorll_Top" scale9Grid="1,1,4,4" />
 				</e:Skin>
 			</e:VScrollBar>
 		</e:Skin>
 	</e:Scroller>
-
-    
 </e:Skin>

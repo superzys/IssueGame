@@ -69,6 +69,7 @@ class GamePage extends eui.Component {
 		}
 	}
 	StartShowUI(): void {
+
 		this.Lab_Gold.text = UserManger.getInstance().userInfoObj.UserGameInfo.Gold + "";
 		this.ShowTalkContent();
 		this.AddShowChooseAnswers();
@@ -144,7 +145,7 @@ class GamePage extends eui.Component {
 	 * 还回去 下面的显示列表;
 	 */
 	ChooseFontCmpClick(idx: number, chooseIdx: number): void {
-		console.log("click " + idx);
+
 		let oneCmp = this.ChoosedCmpArr[idx];
 		oneCmp.SetFont("");
 		let showCmp = this.AllShowFontCmpArr[chooseIdx];
@@ -230,10 +231,10 @@ class GamePage extends eui.Component {
 		}
 	}
 	Deal_ContinuePlot() {
-		console.log("下一关");
 
 		this.CurPlotIndex++;
 		this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
+		console.log("下一关" +this.CurPlotIndex + "plot id " + this.CurPlot._id);
 		this.StartShowUI();
 	}
 	Deal_NextChapter(): void {
@@ -242,7 +243,9 @@ class GamePage extends eui.Component {
 		if (this.AllPlotsObj != undefined) {
 			this.CurPlotIndex = 0;
 			this.CurPlot = this.AllPlotsObj.All[this.CurPlotIndex];
-			this.data = UserManger.getInstance().GetChapterData(this.CurPlot._id);
+			this.data = UserManger.getInstance().GetChapterData(this.AllPlotsObj._id);
+
+			console.log("下一章节" +this.CurPlotIndex + "plot id " + this.CurPlot._id);
 			this.StartShowUI();
 		}
 	}

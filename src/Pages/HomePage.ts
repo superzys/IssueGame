@@ -28,7 +28,7 @@ class HomePage extends eui.Component {
 	BtnClick_StartGame(): void {
 		if (UserManger.getInstance().userInfoObj.UserGameInfo != null) {
 			let group: eui.Component = new ChapterPage();
-			UICenter.getInstance().AddOnePage(group);
+			UICenter.getInstance().AddOnePage(group,true);
 		} else {
 			console.log("尚未登录");
 		}
@@ -38,7 +38,7 @@ class HomePage extends eui.Component {
 	BtnClick_OpenRank(): void {
 		if (UserManger.getInstance().userInfoObj.UserGameInfo != null) {
 			let group: eui.Component = new RankPage();
-			UICenter.getInstance().AddOnePage(group);
+			UICenter.getInstance().AddOnePage(group,true);
 		} else {
 			console.log("尚未登录");
 		}
@@ -48,7 +48,7 @@ class HomePage extends eui.Component {
 	BtnClick_OpenMore(): void {
 		if (UserManger.getInstance().userInfoObj.UserGameInfo != null) {
 			let group: eui.Component = new MoreFunPage();
-			UICenter.getInstance().AddOnePage(group);
+			UICenter.getInstance().AddOnePage(group,true);
 		} else {
 			console.log("尚未登录");
 		}
