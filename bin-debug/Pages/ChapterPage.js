@@ -10,21 +10,31 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var ChapterPage = (function (_super) {
     __extends(ChapterPage, _super);
-    function ChapterPage(cStage) {
+    function ChapterPage() {
         var _this = _super.call(this) || this;
-        _this.Cstage = cStage;
+        _this.name = "ChapterPage";
         _this.addEventListener(eui.UIEvent.COMPLETE, _this.uiCompHandler, _this);
-        _this.skinName = "resource/components/ChapterPage.exml";
+        _this.skinName = "resource/Pages/ChapterPage.exml";
         return _this;
     }
     ChapterPage.prototype.uiCompHandler = function () {
-        console.log("\t\tGoodsUI uiCompHandler");
-        var stageW = this.Cstage.stageWidth;
-        var stageH = this.Cstage.stageHeight;
-        var oldW = this.width;
-        var oldH = this.height;
-        this.width = stageW;
-        this.height = stageH;
+        // UICenter.getInstance().LocFitPage(this);
+        UICenter.getInstance().LocFitPageWithComponent(this, [this.Sc_List]);
+        var data = UserManger.getInstance().AllChaptersInfo;
+        var gameInfo = UserManger.getInstance().userInfoObj.UserGameInfo;
+        var arr = [];
+        if (data && data.All != undefined) {
+            for (var i = 0; i < data.All.length; i++) {
+                var oneChapter = data.All[i];
+                if (gameInfo != null) {
+                    oneChapter.IsUnLock = gameInfo.ChapterId >= oneChapter._id ? true : false;
+                }
+                arr.push(oneChapter);
+            }
+        }
+        var dsListHeros = arr;
+        this.List_Chapters.dataProvider = new eui.ArrayCollection(dsListHeros);
+        this.List_Chapters.itemRenderer = CmpOneChapter;
         // this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
         // this.verticalCenter
     };

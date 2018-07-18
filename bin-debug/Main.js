@@ -98,24 +98,53 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var userInfo;
+            var loginCode, userInfo, userId, loginSendNet, Msg, getData, loginResObj, userInfoObj;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.loadResource()];
+                    case 0:
+                        console.log("runGame");
+                        UICenter.getInstance().SetState(this.stage, this);
+                        HttpFetch.getInstance().SetHttpUrl("http://192.168.10.152:8081/");
+                        return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
+                        UserManger.getInstance().InitPlotData();
                         this.createGameScene();
-                        // const result = await RES.getResAsync("description_json")
-                        // this.startAnimation(result);
                         return [4 /*yield*/, platform.login()];
                     case 2:
-                        // const result = await RES.getResAsync("description_json")
-                        // this.startAnimation(result);
-                        _a.sent();
+                        loginCode = _a.sent();
                         return [4 /*yield*/, platform.getUserInfo()];
                     case 3:
                         userInfo = _a.sent();
                         console.log(userInfo);
+                        userId = egret.localStorage.getItem("WxIssue_UserId");
+                        loginSendNet = new LoginSendNet(userInfo);
+                        loginSendNet.code = loginCode.code;
+                        loginSendNet.UserId = userId;
+                        Msg = JSON.stringify(loginSendNet);
+                        console.log(Msg);
+                        UserManger.getInstance().SetUserInfo(loginSendNet);
+                        return [4 /*yield*/, HttpFetch.getInstance().HttpPost("LoginWx", Msg)];
+                    case 4:
+                        getData = _a.sent();
+                        //  var getData = await HttpFetch.getInstance().HttpGet("http://192.168.10.152:8081/Login", params);
+                        console.log("await  end with " + getData);
+                        if (getData != undefined) {
+                            loginResObj = JSON.parse(getData);
+                            if (loginResObj.msg != undefined) {
+                                userInfoObj = JSON.parse(loginResObj.msg);
+                                if (userInfoObj.error != undefined) {
+                                    console.log("登录错误 " + userInfoObj.error);
+                                }
+                                else {
+                                    console.log("登录成功 " + userInfoObj);
+                                    UserManger.getInstance().SetUserGameInfo(userInfoObj);
+                                    this.CheckIsShowLoginReward();
+                                    return [2 /*return*/];
+                                }
+                            }
+                        }
+                        console.log("服务器连接失败");
                         return [2 /*return*/];
                 }
             });
@@ -128,7 +157,7 @@ var Main = (function (_super) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 4, , 5]);
-                        loadingView = new LoadingUI();
+                        loadingView = new LoadingUI(this.stage.stageWidth, this.stage.stageHeight);
                         this.stage.addChild(loadingView);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
@@ -150,6 +179,22 @@ var Main = (function (_super) {
             });
         });
     };
+    Main.prototype.HttpRequest = function (url, params, responseType, method) {
+        // var params = "{'UserName':'张三', 'Pwd': '10'}"; 
+        var request = new egret.HttpRequest();
+        request.responseType = responseType;
+        request.open(url, method);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); //application/json 
+        request.send(params);
+        function onGetDone(event) {
+            console.log("http get data");
+        }
+        function onGetError(event) {
+            console.log("http get error");
+        }
+        request.addEventListener(egret.Event.COMPLETE, onGetDone, this);
+        request.addEventListener(egret.IOErrorEvent.IO_ERROR, onGetError, this);
+    };
     Main.prototype.loadTheme = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
@@ -166,14 +211,32 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        console.log("createGameScene");
         var stageW = this.stage.stageWidth;
         var stageH = this.stage.stageHeight;
         //加载首页。 然后等服务器返回登录信息
-        var group = new HomePage(this.stage);
+        var group = new HomePage();
+        UICenter.getInstance().AddOnePage(group);
         // //    new components.           
-        group.verticalCenter = 0;
-        group.horizontalCenter = 0;
-        this.addChild(group);
+        // group.verticalCenter = 0;
+        // group.horizontalCenter = 0;
+        // this.addChild(group);
+    };
+    /**
+     * 看下是否弹出签到
+     */
+    Main.prototype.CheckIsShowLoginReward = function () {
+        if (UserManger.getInstance().userInfoObj.UserGameInfo.RemainSignNumToday > 0) {
+            // let stageW = this.stage.stageWidth;
+            // let stageH = this.stage.stageHeight;
+            //加载首页。 然后等服务器返回登录信息
+            var group = new LoginRewardPage();
+            UICenter.getInstance().AddOnePage(group);
+            // //    new components.           
+            // group.verticalCenter = 0;
+            // group.horizontalCenter = 0;
+            // this.addChild(group);
+        }
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

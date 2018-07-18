@@ -12,20 +12,21 @@ var MoreFunPage = (function (_super) {
     __extends(MoreFunPage, _super);
     function MoreFunPage() {
         var _this = _super.call(this) || this;
+        _this.name = "MoreFunPage";
         _this.addEventListener(eui.UIEvent.COMPLETE, _this.uiCompHandler, _this);
-        _this.skinName = "resource/components/LoginRewardPage.exml";
+        _this.skinName = "resource/Pages/MoreFunPage.exml";
         return _this;
     }
     MoreFunPage.prototype.uiCompHandler = function () {
-        console.log("\t\tGoodsUI uiCompHandler");
-        this.Btn_Jump.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
-        // this.verticalCenter
+        UICenter.getInstance().LocFitPage(this);
+        this.Btn_ChuTi.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnClick_ChuTi, this);
     };
     MoreFunPage.prototype.createChildren = function () {
         _super.prototype.createChildren.call(this);
     };
-    MoreFunPage.prototype.onButtonClick = function () {
-        console.log("\t\tmain game clickbtn ");
+    MoreFunPage.prototype.BtnClick_ChuTi = function () {
+        var group = new ChoosePhotoPage();
+        UICenter.getInstance().AddOnePage(group, true);
     };
     return MoreFunPage;
 }(eui.Component));

@@ -38,17 +38,21 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var LoadingUI = (function (_super) {
     __extends(LoadingUI, _super);
-    function LoadingUI() {
+    function LoadingUI(w, h) {
         var _this = _super.call(this) || this;
-        _this.createView();
+        _this.createView(w, h);
         return _this;
     }
-    LoadingUI.prototype.createView = function () {
+    LoadingUI.prototype.createView = function (w, h) {
+        this.width = w;
+        this.height = h;
         this.textField = new egret.TextField();
+        this.textField.text = "Loading...";
         this.addChild(this.textField);
-        this.textField.y = 300;
         this.textField.width = 480;
         this.textField.height = 100;
+        this.textField.y = 300 / 1136 * h;
+        this.textField.x = (w - 480) / 2;
         this.textField.textAlign = "center";
     };
     LoadingUI.prototype.onProgress = function (current, total) {
