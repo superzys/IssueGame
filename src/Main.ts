@@ -60,7 +60,7 @@ class Main extends eui.UILayer {
     private async runGame() {
         console.log("runGame");
         UICenter.getInstance().SetState(this.stage, this);
-        HttpFetch.getInstance().SetHttpUrl("http://192.168.10.152:8081/");
+        HttpFetch.getInstance().SetHttpUrl("http://47.100.200.222:8081/");
 
         await this.loadResource()
         UserManger.getInstance().InitPlotData();
